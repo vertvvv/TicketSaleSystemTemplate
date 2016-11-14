@@ -1,0 +1,219 @@
+<html>
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<title>Ticket Sale System</title>
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/main.css" rel="stylesheet"/>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+</head>
+
+<body>
+
+<header class="main-header">
+    <div class="header-logo">
+        <h1>Disneyland Ticket Sale System</h1>
+        <div class="here-login">
+            <div class="btn-group user-drop-grp">
+                <button type="button" class="btn btn-lg btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Welcome, {username}<span class="glyphicon glyphicon-align-justify icon-pad-left" aria-hidden="true"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="#">Tickets</a></li>
+                    <li><a href="#">Q&A</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li role="separator" class="divider"></li><li><a href="#">Logout</a></li>
+                </ul>
+            </div>
+            <!--
+        <div class="login-place">
+            <p>
+                <a href="#openModal" onclick="openModal(true);">Login</a> or <a href="#openModal" onclick="openModal(false);">Registration</a>
+            </p>
+        </div>
+-->
+        </div>
+    </div>
+</header>
+
+
+
+<div id="openModal" class="modalDialog">
+    <div class="login-wrap">
+        <div class="login-html">
+            <a href="#close" class="close-new">x</a>
+
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked>
+            <label for="tab-1" class="tab">Sign In</label>
+
+            <input id="tab-2" type="radio" name="tab" class="sign-up">
+            <label for="tab-2" class="tab">Sign Up</label>
+
+            <div class="login-form">
+                <div class="sign-in-htm">
+                    <div class="group">
+                        <label for="user" class="label">Username</label>
+                        <input id="user" type="text" class="input">
+                    </div>
+                    <div class="group">
+                        <label for="pass" class="label">Password</label>
+                        <input id="pass" type="password" class="input" data-type="password">
+                    </div>
+                    <div class="group">
+                        <input id="check" type="checkbox" class="check" checked>
+                        <label for="check"><span class="icon"></span> Keep me Signed in</label>
+                    </div>
+                    <div class="group">
+                        <input type="submit" class="button" value="Sign In">
+                    </div>
+                    <div class="hr"></div>
+                    <div class="foot-lnk">
+                        <a href="#forgot">Forgot Password?</a>
+                    </div>
+                </div>
+                <div class="sign-up-htm">
+                    <div class="group">
+                        <label for="user" class="label">Username</label>
+                        <input id="userSign" type="text" class="input">
+                    </div>
+                    <div class="group">
+                        <label for="pass1" class="label">Password</label>
+                        <input id="pass1" type="password" class="input" data-type="password">
+                    </div>
+                    <div class="group">
+                        <label for="pass2" class="label">Repeat Password</label>
+                        <input id="pass2" type="password" class="input" data-type="password">
+                    </div>
+                    <div class="group">
+                        <label for="email" class="label">Email Address</label>
+                        <input id="email" type="text" class="input">
+                    </div>
+                    <div class="group">
+                        <label for="submit" class="label"><br></label>
+                        <input id="submit" type="submit" class="button" value="Sign Up">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container main-container">
+    <div id="display">
+        <h1>Attractions</h1>
+        <h2>Adventures, classic stories and exhilarating thrills</h2>
+        <div id="main">
+            <div class="col">
+                <div class="box" onclick="box(this, flag);">
+                    <div class="box-content">
+                        <p class="box-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquam, nisi eu aliquet ultricies, arcu nulla hendrerit quam, eget blandit felis erat sed neque. Phasellus fringilla pulvinar sapien, ut sagittis odio lacinia a. Nam nec molestie libero. Donec ac pretium justo. Etiam nec consectetur magna. Etiam eget mi eros. Nam placerat nunc at lectus lobortis interdum. Pellentesque id aliquet mi.
+                        </p>
+                        <button class="box-button btn btn-default" onclick="buyTicket(flag);">Buy Ticket</button>
+                    </div>
+                    <div class="box-icon"></div>
+                    <div class="box-title">Attraction one</div>
+                </div>
+                <div class="box" onclick="box(this, flag);">
+                    <div class="box-content">
+                        <p class="box-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquam, nisi eu aliquet ultricies, arcu nulla hendrerit quam, eget blandit felis erat sed neque. Phasellus fringilla pulvinar sapien, ut sagittis odio lacinia a. Nam nec molestie libero. Donec ac pretium justo. Etiam nec consectetur magna. Etiam eget mi eros. Nam placerat nunc at lectus lobortis interdum. Pellentesque id aliquet mi.
+                        </p>
+                        <button class="box-button btn btn-default" onclick="buyTicket(flag);">Buy Ticket</button>
+                    </div>
+                    <div class="box-icon"></div>
+                    <div class="box-title">Attraction one</div>
+                </div>
+                <div class="box" onclick="box(this, flag);">
+                    <div class="box-content">
+                        <p class="box-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquam, nisi eu aliquet ultricies, arcu nulla hendrerit quam, eget blandit felis erat sed neque. Phasellus fringilla pulvinar sapien, ut sagittis odio lacinia a. Nam nec molestie libero. Donec ac pretium justo. Etiam nec consectetur magna. Etiam eget mi eros. Nam placerat nunc at lectus lobortis interdum. Pellentesque id aliquet mi.
+                        </p>
+                        <button class="box-button btn btn-default" onclick="buyTicket(flag);">Buy Ticket</button>
+                    </div>
+                    <div class="box-icon"></div>
+                    <div class="box-title">Attraction one</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="box" onclick="box(this, flag);">
+                    <div class="box-content">
+                        <p class="box-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquam, nisi eu aliquet ultricies, arcu nulla hendrerit quam, eget blandit felis erat sed neque. Phasellus fringilla pulvinar sapien, ut sagittis odio lacinia a. Nam nec molestie libero. Donec ac pretium justo. Etiam nec consectetur magna. Etiam eget mi eros. Nam placerat nunc at lectus lobortis interdum. Pellentesque id aliquet mi.
+                        </p>
+                        <button class="box-button btn btn-default" onclick="buyTicket(flag);">Buy Ticket</button>
+                    </div>
+                    <div class="box-icon"></div>
+                    <div class="box-title">Attraction onelong</div>
+                </div>
+                <div class="box" onclick="box(this, flag);">
+                    <div class="box-content">
+                        <p class="box-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquam, nisi eu aliquet ultricies, arcu nulla hendrerit quam, eget blandit felis erat sed neque. Phasellus fringilla pulvinar sapien, ut sagittis odio lacinia a. Nam nec molestie libero. Donec ac pretium justo. Etiam nec consectetur magna. Etiam eget mi eros. Nam placerat nunc at lectus lobortis interdum. Pellentesque id aliquet mi.
+                        </p>
+                        <button class="box-button btn btn-default" onclick="buyTicket(flag);">Buy Ticket</button>
+                    </div>
+                    <div class="box-icon"></div>
+                    <div class="box-title">Attraction onelongonelongonelong</div>
+                </div>
+                <div class="box" onclick="box(this, flag);">
+                    <div class="box-content">
+                        <p class="box-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquam, nisi eu aliquet ultricies, arcu nulla hendrerit quam, eget blandit felis erat sed neque. Phasellus fringilla pulvinar sapien, ut sagittis odio lacinia a. Nam nec molestie libero. Donec ac pretium justo. Etiam nec consectetur magna. Etiam eget mi eros. Nam placerat nunc at lectus lobortis interdum. Pellentesque id aliquet mi.
+                        </p>
+                        <button class="box-button btn btn-default" onclick="buyTicket(flag);">Buy Ticket</button>
+                    </div>
+                    <div class="box-icon"></div>
+                    <div class="box-title">CLICK ME !</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="box" onclick="box(this, flag);">
+                    <div class="box-content">
+                        <p class="box-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquam, nisi eu aliquet ultricies, arcu nulla hendrerit quam, eget blandit felis erat sed neque. Phasellus fringilla pulvinar sapien, ut sagittis odio lacinia a. Nam nec molestie libero. Donec ac pretium justo. Etiam nec consectetur magna. Etiam eget mi eros. Nam placerat nunc at lectus lobortis interdum. Pellentesque id aliquet mi.
+                        </p>
+                        <button class="box-button btn btn-default" onclick="buyTicket(flag);">Buy Ticket</button>
+                    </div>
+                    <div class="box-icon"></div>
+                    <div class="box-title">CLICK ME !</div>
+                </div>
+                <div class="box" onclick="box(this, flag);">
+                    <div class="box-content">
+                        <p class="box-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquam, nisi eu aliquet ultricies, arcu nulla hendrerit quam, eget blandit felis erat sed neque. Phasellus fringilla pulvinar sapien, ut sagittis odio lacinia a. Nam nec molestie libero. Donec ac pretium justo. Etiam nec consectetur magna. Etiam eget mi eros. Nam placerat nunc at lectus lobortis interdum. Pellentesque id aliquet mi.
+                        </p>
+                        <button class="box-button btn btn-default" onclick="buyTicket(flag);">Buy Ticket</button>
+                    </div>
+                    <div class="box-icon"></div>
+                    <div class="box-title">CLICK ME !</div>
+                </div>
+                <div class="box" onclick="box(this, flag);">
+                    <div class="box-content">
+                        <p class="box-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquam, nisi eu aliquet ultricies, arcu nulla hendrerit quam, eget blandit felis erat sed neque. Phasellus fringilla pulvinar sapien, ut sagittis odio lacinia a. Nam nec molestie libero. Donec ac pretium justo. Etiam nec consectetur magna. Etiam eget mi eros. Nam placerat nunc at lectus lobortis interdum. Pellentesque id aliquet mi.
+                        </p>
+                        <button class="box-button btn btn-default" onclick="buyTicket(flag);">Buy Ticket</button>
+                    </div>
+                    <div class="box-icon"></div>
+                    <div class="box-title">CLICK ME !</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+
+</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,549 @@
+@import url("http://fonts.googleapis.com/css?family=Oleo+Script:400|Open+Sans:300,300italic,600,600italic,800");
+
+/* Reset */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+body {
+    -webkit-text-size-adjust: none;
+}
+
+/*Reset end*/
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: url('../img/bg3.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.login-place {
+    margin: 0 auto;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    padding: 0.35% 0 0.65% 0;
+    width: 15%;
+    background: #fff;
+    border-radius: 5px;
+    border: 1px solid  #ccc;
+}
+
+.user-drop-grp {
+    margin-top: 2%;
+}
+
+.user-drop-grp button{
+    font-weight: 600;
+    font-size: 1.35em;
+    transition: 0.5s;
+}
+.user-drop-grp li a {
+    font-size: 1.2em;
+    transition: 0.5s;
+}
+
+.user-drop-grp ul{
+    float: right;
+    position: absolute;
+    right: 0;
+    left: auto;
+}
+
+.user-drop-grp button {
+    width: 400px;
+    text-align: left;
+}
+
+.icon-pad-left {
+    float: right;
+}
+
+.login-place a:hover {
+    color: #555;
+    transition: 0.5s ease;
+    text-decoration: none;
+}
+
+.main-header {
+    height: 20%;
+    text-align: center;
+}
+
+.header-logo h1 {
+    padding-top: 2%;
+    font-size: 3.5em;
+    font-weight: 600;
+}
+
+.header-logo p {
+    padding-top: 1%;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.main-container {
+    margin-top: 2%;
+    width: 70%;
+    background-color: #f0f0f0;
+    opacity: 1;
+    border-radius: 100px 100px 0 0;
+    text-align: center;
+    font-weight: 500;
+    padding-bottom: 5%;
+    margin-bottom: 5%;
+}
+
+.main-container h1 {
+    padding-top: 1%;
+    font-size: 2.5em;
+}
+
+.main-container h2 {
+    padding-top: 1%;
+    font-size: 2em;
+    padding-bottom: 1%;
+}
+
+#main {
+    margin:0 auto;
+    font-size:0;
+}
+
+/* Box */
+
+.col {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.box, .box * {
+    -webkit-transition: 0.3s linear;
+    -ms-transition: 0.3s linear;
+    transition: 0.3s linear;
+}
+
+.box {
+    background: rgb(240,240,240);
+    border: 1px solid rgb(210,210,210);
+    border-right: 1px solid rgb(210,210,210);
+    width: 350px;
+    height: 300px;
+    font-family: Arial;
+}
+
+.box-content {
+    background: rgb(249,249,249);
+    width: 100px;
+    height: 100px;
+    margin: 70px 0 0 130px;
+    border-radius: 100px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.box-text {
+    width: 230px;
+    margin: 170px 0 0 -65px;
+    opacity: 0;
+    position: absolute;
+    font-size: 13px;
+    color: rgb(30,30,30);
+    text-align: center;
+    line-height: 20px;
+    -webkit-transition: margin 0.3s linear, opacity 0.1s linear;
+    -ms-transition: margin 0.3s linear, opacity 0.1s linear;
+    transition: margin 0.3s linear, opacity 0.1s linear;
+}
+
+.box-icon {
+    background: url('../img/attr2.png') no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 150px;
+    height: 150px;
+    margin: 50px 0 0 100px;
+    border-radius: 100px;
+    position: absolute;
+}
+
+.box-title {
+    width: 300px;
+    margin: 220px 0 0 25px;
+    position: absolute;
+    font-size: 18px;
+    color: rgb(30,30,30);
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.box-button {
+    width: 100px;
+    height: 34px;
+    margin: 540px 0 0 -50px;
+    text-align: center;
+    position: absolute;
+}
+
+.close {
+    margin-right: 3px;
+    opacity: 1;
+}
+
+.box.target {
+    height: 600px;
+}
+
+.box.target .box-title {
+    margin: 250px 0 0 25px;
+}
+
+.box.target .box-content {
+    width: 348px;
+    height: 598px;
+    border-radius: 0;
+    margin: 0;
+}
+
+.box.target .box-text {
+    margin: 300px 0 0 60px;
+    opacity: 1;
+    -webkit-transition: opacity 0.2s 0.4s linear;
+    -ms-transition: opacity 0.2s 0.4s linear;
+    transition: opacity 0.2s 0.4s linear;
+}
+
+.box.target .box-icon {
+    width: 200px;
+    height: 150px;
+    margin: 50px 0 0 75px;
+    border-radius: 0;
+    opacity: 1;
+}
+
+.box.target .box-button {
+    width: 100px;
+    height: 34px;
+    text-align: center;
+    position: absolute;
+    border-radius: 5px;
+    opacity: 1;
+}
+
+/* Box end */
+
+.modalDialog {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding-top: 8%;
+    background: rgba(0,0,0,0.8);
+    z-index: 99999;
+    display: none;
+    pointer-events: none;
+}
+
+.modalDialog:target {
+    display: block;
+    pointer-events: auto;
+}
+
+.close-new {
+    color: #000;
+    font-family: 'Open Sans', sans-serif;
+    opacity: 1;
+    line-height: 25px;
+    position: absolute;
+    text-align: center;
+    right: 3px;
+    top: 0px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 2em;
+}
+
+.close-new:hover {
+    color: #999;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+/* Login */
+
+*,:after,:before{box-sizing:border-box}
+.clearfix:after,.clearfix:before{content:'';display:table}
+.clearfix:after{clear:both;display:block}
+
+.login-wrap{
+    width: 100%;
+    margin: auto;
+    max-width: 525px;
+    min-height: 530px;
+    position: relative;
+    box-shadow: 0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+}
+
+.login-html{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 50px 70px 20px 70px;
+    background-color: rgba(40, 64, 112, 0.98);
+}
+
+.login-html label {
+    color: #aaa;
+    cursor: pointer;
+}
+
+.login-html label:hover {
+    color: #fff;
+    transition: 0.5s;
+}
+
+.login-html .sign-in-htm,
+.login-html .sign-up-htm{
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    transition: all .4s linear;
+}
+
+.login-html .sign-in,
+.login-html .sign-up,
+.login-form .group .check{
+    display:none;
+}
+
+.login-html .tab,
+.login-form .group .label,
+.login-form .group .button{
+    text-transform:uppercase;
+}
+
+.login-html .tab{
+    font-size:22px;
+    margin-right:15px;
+    padding-bottom:5px;
+    margin:0 15px 10px 0;
+    display:inline-block;
+    border-bottom:2px solid transparent;
+}
+
+.login-html .sign-in:checked + .tab,
+.login-html .sign-up:checked + .tab{
+    color: #fff;
+    border-color: #1161ee;
+}
+
+.login-form{
+    min-height: 345px;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.login-form .group{
+    margin-bottom: 15px;
+}
+
+.login-form .group .label,
+.login-form .group .input,
+.login-form .group .button{
+    width: 100%;
+    color: #fff;
+    display: block;
+}
+
+.login-form .group .input,
+.login-form .group .button{
+    border: none;
+    padding: 15px 20px;
+    border-radius: 25px;
+    background: rgba(255,255,255,.1);
+}
+
+.login-form .group input[data-type="password"]{
+    -webkit-text-security: circle;
+}
+
+.login-form .group .label{
+    color: #aaa;
+    font-size: 12px;
+}
+
+.login-form .group .button{
+    background: #1161ee;
+}
+
+.login-form .group label .icon{
+    width: 15px;
+    height: 15px;
+    border-radius: 2px;
+    position: relative;
+    display: inline-block;
+    background: rgba(255,255,255,.1);
+}
+
+.login-form .group label .icon:before,
+.login-form .group label .icon:after{
+    content: '';
+    width: 10px;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    transition: all .2s ease-in-out 0s;
+}
+
+.login-form .group label .icon:before{
+    left: 3px;
+    width: 5px;
+    bottom: 6px;
+    transform: scale(0) rotate(0);
+}
+
+.login-form .group label .icon:after{
+    top: 6px;
+    right: 0;
+    transform: scale(0) rotate(0);
+}
+
+.login-form .group .check:checked + label{
+    color: #fff;
+}
+
+.login-form .group .check:checked + label .icon{
+    background: #1161ee;
+}
+
+.login-form .group .check:checked + label .icon:before{
+    transform: scale(1) rotate(45deg);
+}
+
+.login-form .group .check:checked + label .icon:after{
+    transform: scale(1) rotate(-45deg);
+}
+
+.login-html .sign-in:checked + .tab + .sign-up + .tab + .login-form .sign-in-htm{
+    transform: rotate(0);
+}
+
+.login-html .sign-up:checked + .tab + .login-form .sign-up-htm{
+    transform: rotate(0);
+}
+
+.hr{
+    height: 2px;
+    margin: 40px 0 70px 0;
+    background: rgba(255,255,255,.2);
+}
+
+.foot-lnk{
+    text-align: center;
+    font-size: 1.2em;
+    color: #999;
+    text-decoration: none;
+}
+
+.foot-lnk a{
+    color: #999;
+    text-decoration: none;
+}
+
+.foot-lnk a:hover{
+    text-decoration: underline;
+}
+
+
+/* Login End */
+
+/*PROFILE.HTML*/
+
+/* Profile Page */
+
+.header-menu {
+    background-color: #f0f0f0;
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.header-menu-group a{
+    transition: 0.5s ease;
+}
+.header-menu-group a:first-of-type,
+.header-menu-group a:last-of-type{
+    border-radius: 0;
+}
+
+.profile-container {
+    width: 70%;
+    background-color: #f0f0f0;
+    opacity: 1;
+    text-align: center;
+    font-weight: 500;
+    padding-bottom: 5%;
+    margin-bottom: 5%;
+    min-height: 1000px;
+}
+
+.profile-container h1 {
+    padding-top: 3%;
+    font-size: 2.5em;
+}
+
+.info-container {
+    font-size: 2em;
+    text-align: left;
+    display: block;
+    float: left;
+    padding-left: 5%;
+    padding-top: 5%;
+}
+
+.info-container p {
+    padding-top: 5%;
+}
+
