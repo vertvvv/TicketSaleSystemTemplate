@@ -603,39 +603,27 @@ body {
     text-decoration: underline;
 }
 
-
-/* Login End */
-
 /*PROFILE.HTML*/
 
 /* Profile Page */
-
-.header-menu {
-    background-color: #f0f0f0;
-    width: 70%;
-    text-align: center;
-    margin: 0 auto;
-}
-
-.header-menu-group a{
-    transition: 0.5s ease;
-}
-.header-menu-group a:first-of-type,
-.header-menu-group a:last-of-type{
-    border-radius: 0;
-}
 
 .info-container {
     display: block;
     float: left;
     padding-left: 5%;
     padding-top: 5%;
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: 600;
     text-align: left;
+    width: 80%;
+    margin-left: 20%;
 }
 
-.info-container p {
-    padding-top: 2%;
+.info-container .form-group {
+    display: block;
+    margin-bottom: 20px;
 }
 
+.info-container button {
+    font-weight: 600;
+}
