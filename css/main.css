@@ -613,8 +613,8 @@ body {
 .info-container {
     display: block;
     float: left;
-    padding: 2% 2% 2% 8%;
-    font-size: 1.5em;
+    padding: 2% 2% 2% 9%;
+    font-size: 1em;
     font-weight: 600;
     text-align: left;
     margin: 5% 8% 0 5%;
@@ -641,7 +641,7 @@ body {
 
 .info-container input {
     width: 100%;
-    margin-left: 75px;
+    margin-left: 100px;
 }
 
 .info-container button {
@@ -652,7 +652,7 @@ body {
     display: block;
     float: left;
     padding: 2% 2% 2% 2%;
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: 600;
     text-align: center;
     margin: 5% 0 0 5%;
@@ -668,6 +668,16 @@ body {
 }
 
 .menu-container button {
-    padding-top: 18%;
-    padding-bottom: 18%;
+
+    font-size: 0.7em;
+    font-weight: 600;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    -webkit-transition: 0.5s ease;
+    -moz-transition: 0.5s ease;
+    transition: 0.5s ease;
+}
+
+.no-float {
+    display: block;
 }
