@@ -18,13 +18,17 @@
 
 <header class="header-outer">
     <div class="header-inner">
-        <h1>Disneyland Ticket Sale System</h1>
+        <h1>Ticket Sale System</h1>
         <nav>
-            <a href="main.html">Home</a>
-            <span>|</span>
-            <a href="#">Orders</a>
-            <span>|</span>
-            <a href="#">Settings</a>
+            <span>Welcome,</span>
+            <ul class="navigation">
+                <a class="main-link" href="#url">Username</a>
+                <li class="n1"><a class="dropdown-link" href="main.html">Home</a></li>
+                <li class="n2"><a class="dropdown-link" href="settings.html">Profile</a></li>
+                <li class="n3"><a class="dropdown-link" href="#">Orders</a></li>
+                <li class="n4"><a class="dropdown-link" href="#">Settings</a></li>
+                <li class="n5"><a class="dropdown-link" href="#">Logout</a></li>
+            </ul>
         </nav>
     </div>
 </header>
@@ -35,41 +39,41 @@
         <div id="main-profile">
             <div class="info-container container">
                 <form class="form-inline">
-                    <div class="form-group row">
-                        <label class="col-md-3" for="inputName">Your name:</label>
-                        <input class="form-control col-md-2" id="inputName" placeholder="Name">
-                        <span class="col-md-1"></span>
-                        <button type="submit" class="btn btn-default col-md-1">Change</button>
+                    <div class="form-group">
+                        <label for="inputName">Your name:</label>
+                        <input class="form-control" id="inputName" placeholder="Name">
                     </div>
-                    <div class="form-group row">
-                        <label class="col-md-3" for="inputSurname">Your Surname:</label>
-                        <input class="form-control col-md-2" id="inputSurname" placeholder="Surname">
-                        <span class="col-md-1"></span>
-                        <button type="submit" class="btn btn-default col-md-1">Change</button>
+                    <div class="form-group">
+                        <label for="inputSurname">Your surname:</label>
+                        <input class="form-control" id="inputSurname" placeholder="Surname">
                     </div>
-                    <div class="form-group row">
-                        <label class="col-md-3" for="inputBirthDate">Birth Date:</label>
-                        <input class="form-control col-md-2" id="inputBirthDate" placeholder="XX.XX.XXXX">
-                        <span class="col-md-1"></span>
-                        <button type="submit" class="btn btn-default col-md-1">Change</button>
+                    <div class="form-group">
+                        <label for="inputBirthDate">Birth Date:</label>
+                        <input class="form-control" id="inputBirthDate" placeholder="XX.XX.XXXX">
                     </div>
-                    <div class="form-group row">
-                        <label class="col-md-3" for="inputEmail">Email:</label>
-                        <input type="email" class="form-control col-md-2" id="inputEmail" placeholder="Email">
-                        <span class="col-md-1"></span>
-                        <button type="submit" class="btn btn-default col-md-1">Change</button>
+                    <div class="form-group">
+                        <label for="inputEmail">Email:</label>
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Email" disabled>
                     </div>
-                    <div class="form-group row">
-                        <label class="col-md-3" for="inputPassword">Password:</label>
-                        <input type="password" class="form-control col-md-2" id="inputPassword" placeholder="Password">
+                    <div class="form-group">
+                        <label for="inputPassword">Password:</label>
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
                     </div>
-                    <div class="form-group row">
-                        <label class="col-md-3" for="inputPasswordConfirm">Confirm Password:</label>
-                        <input type="password" class="form-control col-md-2" id="inputPasswordConfirm" placeholder="Password">
-                        <span class="col-md-1"></span>
-                        <button type="submit" class="btn btn-default col-md-1">Change</button>
+                    <div class="form-group">
+                        <label for="inputPasswordConfirm">Confirm Password:</label>
+                        <input type="password" class="form-control" id="inputPasswordConfirm" placeholder="Password">
                     </div>
+                    <button type="submit" class="btn btn-block btn-default">Change</button>
                 </form>
+            </div>
+            <div class="menu-container container">
+                <span>My profile</span>
+                <div class="btn-group-vertical">
+                    <button class="btn btn-default btn-block btn-lg">Home</button>
+                    <button class="btn btn-default btn-block btn-lg">Orders</button>
+                    <button class="btn btn-default btn-block btn-lg">Settings</button>
+                    <button class="btn btn-default btn-block btn-lg">Logout</button>
+                </div>
             </div>
         </div>
     </div>
