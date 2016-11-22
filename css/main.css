@@ -57,6 +57,10 @@ body {
     background-size: cover;
 }
 
+.no-padding {
+    padding: 0;
+}
+
 .main-container {
     margin-top: 2%;
     width: 80%;
@@ -86,6 +90,8 @@ body {
 
 .main-display {
     margin-top: 100px;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 /*Header*/
@@ -140,122 +146,63 @@ nav {
 
 /* Box */
 
-.col {
-    display: inline-block;
-    vertical-align: top;
-}
-
-.box, .box * {
-    -webkit-transition: 0.3s linear;
-    -ms-transition: 0.3s linear;
-    transition: 0.3s linear;
-}
-
 .box {
-    background: rgb(240,240,240);
-    border: 1px solid rgb(210,210,210);
-    border-right: 1px solid rgb(210,210,210);
-    width: 350px;
-    height: 300px;
+    border: 1px solid black;
+    width: 100%;
+    height: 40%;
+    display: block;
+    font-size: 10px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
 }
 
-.box-content {
-    background: rgb(249,249,249);
-    width: 100px;
-    height: 100px;
-    margin: 70px 0 0 130px;
-    border-radius: 100px;
-    overflow: hidden;
-    position: absolute;
-}
-
-.box-text {
-    width: 230px;
-    margin: 170px 0 0 -65px;
-    opacity: 0;
-    position: absolute;
-    font-size: 13px;
-    color: rgb(30,30,30);
+.box-title {
+    margin-top: -20%;
+    color: #333;
+    font-size: 3vw;
     text-align: center;
-    line-height: 20px;
-    -webkit-transition: margin 0.3s linear, opacity 0.1s linear;
-    -ms-transition: margin 0.3s linear, opacity 0.1s linear;
-    transition: margin 0.3s linear, opacity 0.1s linear;
+    font-weight: 600;
+    letter-spacing: 2px;
+    opacity: 0;
+    user-select: none;
+    cursor: default;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+@media (min-width: 768px) {
+    .box-title {
+        margin-top: -55%;
+        font-size: 2vw;
+    }
 }
 
 .box-icon {
     background: url('../img/attr2.png') no-repeat;
     background-position: center;
     background-size: cover;
-    width: 150px;
-    height: 150px;
-    margin: 50px 0 0 100px;
-    border-radius: 100px;
-    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
 }
 
-.box-title {
-    width: 300px;
-    margin: 220px 0 0 25px;
-    position: absolute;
-    font-size: 18px;
-    color: rgb(30,30,30);
-    text-align: center;
-    font-weight: 600;
-    letter-spacing: 2px;
-}
-
-.box-button {
-    width: 100px;
-    height: 34px;
-    margin: 540px 0 0 -50px;
-    text-align: center;
-    position: absolute;
-}
-
-.close {
-    margin-right: 3px;
+.box:hover .box-title {
+    color: #333;
     opacity: 1;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
 }
-
-.box.target {
-    height: 600px;
-}
-
-.box.target .box-title {
-    margin: 250px 0 0 25px;
-}
-
-.box.target .box-content {
-    width: 348px;
-    height: 598px;
-    border-radius: 0;
-    margin: 0;
-}
-
-.box.target .box-text {
-    margin: 300px 0 0 60px;
-    opacity: 1;
-    -webkit-transition: opacity 0.2s 0.4s linear;
-    -ms-transition: opacity 0.2s 0.4s linear;
-    transition: opacity 0.2s 0.4s linear;
-}
-
-.box.target .box-icon {
-    width: 200px;
-    height: 150px;
-    margin: 50px 0 0 75px;
-    border-radius: 0;
-    opacity: 1;
-}
-
-.box.target .box-button {
-    width: 100px;
-    height: 34px;
-    text-align: center;
-    position: absolute;
-    border-radius: 5px;
-    opacity: 1;
+.box:hover .box-icon {
+    opacity: 0.25;
 }
 
 /* Box end */
