@@ -98,9 +98,6 @@ body {
     font-size:0;
 }
 
-.main-display {
-}
-
 /*Header*/
 
 .separator {
@@ -166,7 +163,7 @@ nav {
     transition: all 0.5s;
 }
 
-@media (max-width: 765px) {
+@media (max-width: 767px) {
     .box {
         height: 30vw;
     }
@@ -230,10 +227,16 @@ nav {
     bottom: 0;
     left: 0;
     padding-top: 8%;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.75);
     z-index: 99999;
     display: none;
     pointer-events: none;
+}
+
+@media (max-width: 767px) {
+    .modalDialog {
+        padding-top: 28%;
+    }
 }
 
 .modalDialog:target {
@@ -271,18 +274,17 @@ nav {
 .login-wrap{
     width: 100%;
     margin: auto;
-    max-width: 525px;
-    min-height: 500px;
+    max-width: 425px;
+    min-height: 475px;
     position: relative;
-    box-shadow: 0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
 }
 
 .login-html{
     width: 100%;
     height: 100%;
     position: absolute;
-    padding: 50px 70px 20px 70px;
-    background-color: rgba(40, 100, 162, 0.95);
+    padding: 10% 7% 0 7%;
+    background-color: rgba(100, 120, 152, 0.95);
 }
 
 .login-html label {
@@ -295,7 +297,7 @@ nav {
     transition: 0.5s;
 }
 
-.login-html .sign-in-htm,
+.login-html .log-in-htm,
 .login-html .sign-up-htm{
     top: 0;
     left: 0;
@@ -307,15 +309,14 @@ nav {
     transition: all .4s linear;
 }
 
-.login-html .sign-in,
+.login-html .log-in,
 .login-html .sign-up,
 .login-form .check{
     display:none;
 }
 
 .login-html .tab,
-.login-form label,
-.login-form button{
+.login-form label{
     text-transform:uppercase;
 }
 
@@ -327,7 +328,7 @@ nav {
     border-bottom: 2px solid transparent;
 }
 
-.login-html .sign-in:checked + .tab,
+.login-html .log-in:checked + .tab,
 .login-html .sign-up:checked + .tab{
     color: #fff;
     border-color: #11a1ee;
@@ -422,12 +423,20 @@ nav {
     transform: scale(1) rotate(-45deg);
 }
 
-.login-html .sign-in:checked + .tab + .sign-up + .tab + .login-form .sign-in-htm{
+.login-html .log-in:checked + .tab + .sign-up + .tab + .login-form .log-in-htm{
     transform: rotate(0deg);
 }
 
 .login-html .sign-up:checked + .tab + .login-form .sign-up-htm{
     transform: rotate(0deg);
+}
+
+.login-html .sign-up:checked + .tab + .login-form .log-in-htm{
+    visibility: hidden;
+}
+
+.login-html .log-in:checked + .tab + .tab + .login-form .sign-up-htm{
+    visibility: hidden;
 }
 
 .hr{
