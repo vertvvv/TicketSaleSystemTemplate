@@ -9,10 +9,6 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/main.css" rel="stylesheet"/>
 
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
-
 </head>
 
 <body>
@@ -45,7 +41,7 @@
 <div id="openModal" class="modalDialog">
     <div class="login-wrap">
         <div class="login-html">
-            <a href="#" class="close-new">x</a>
+            <a href="#" class="close-new"><span>&times;</span></a>
 
             <input id="tab-1" type="radio" name="tab" class="log-in" checked>
             <label for="tab-1" class="tab">Log In</label>
@@ -95,6 +91,27 @@
     </div>
 </div>
 
+<div id="attractionModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog attr-mod-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close close-buy-modal" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h1 class="modal-title attr-mod-title" id="exampleModalLabel">New message</h1>
+            </div>
+            <div class="modal-body">
+                <img src="img/attr2.png">
+                <p><span>Category:</span> Kids</p>
+                <p><span>Price:</span> 10$</p>
+                <p><span>Description:</span> Best attraction ever blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah</p>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-block btn-primary btn-footer-buy">Buy Ticket</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="container main-container">
     <div id="display">
 
@@ -103,57 +120,57 @@
 
         <div class="row" id="main">
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 no-padding">
-                <div class="box">
+                <div class="box" data-toggle="modal" data-target="#attractionModal" data-name="First Attraction">
                     <div class="box-icon"></div>
                     <div class="box-title">Attraction one</div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 no-padding">
-                <div class="box">
+                <div class="box" data-toggle="modal" data-target="#attractionModal" data-name="Second Attraction">
                     <div class="box-icon"></div>
-                    <div class="box-title">Attraction one</div>
+                    <div class="box-title">Attraction two</div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 no-padding">
-                <div class="box">
+                <div class="box" data-toggle="modal" data-target="#attractionModal" data-name="One More Attraction">
                     <div class="box-icon"></div>
-                    <div class="box-title">Attraction one</div>
+                    <div class="box-title">Other attraction</div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 no-padding">
-                <div class="box">
+                <div class="box" data-toggle="modal" data-target="#attractionModal" data-name="One More Attraction">
                     <div class="box-icon"></div>
-                    <div class="box-title">Attraction one</div>
+                    <div class="box-title">Other attraction</div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 no-padding">
-                <div class="box">
+                <div class="box" data-toggle="modal" data-target="#attractionModal" data-name="One More Attraction">
                     <div class="box-icon"></div>
-                    <div class="box-title">Attraction one</div>
+                    <div class="box-title">Other attraction</div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 no-padding">
-                <div class="box">
+                <div class="box" data-toggle="modal" data-target="#attractionModal" data-name="One More Attraction">
                     <div class="box-icon"></div>
-                    <div class="box-title">Attraction one</div>
+                    <div class="box-title">Other attraction</div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 no-padding">
-                <div class="box">
+                <div class="box" data-toggle="modal" data-target="#attractionModal" data-name="One More Attraction">
                     <div class="box-icon"></div>
-                    <div class="box-title">Attraction one</div>
+                    <div class="box-title">Other attraction</div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 no-padding">
-                <div class="box">
+                <div class="box" data-toggle="modal" data-target="#attractionModal" data-name="One More Attraction">
                     <div class="box-icon"></div>
-                    <div class="box-title">Attraction one</div>
+                    <div class="box-title">Other attraction</div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 no-padding">
-                <div class="box">
+                <div class="box" data-toggle="modal" data-target="#attractionModal" data-name="Last Attraction">
                     <div class="box-icon"></div>
-                    <div class="box-title">Attraction one</div>
+                    <div class="box-title">Last attraction</div>
                 </div>
             </div>
         </div>
@@ -164,6 +181,10 @@
 <footer>
 
 </footer>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 
 </body>
 

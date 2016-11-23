@@ -65,18 +65,20 @@ body {
     width: 80%;
     background-color: #f0f0f0;
     opacity: 1;
-    border-radius: 80px 80px 0 0;
+    border-radius: 80px;
     text-align: center;
     font-weight: 500;
     padding-bottom: 5%;;
     margin-top: 100px;
     padding-left: 10%;
     padding-right: 10%;
+    margin-bottom: 50px;
 }
 
 @media (max-width: 767px) {
     .main-container {
         margin-top: 50px;
+        margin-bottom: 0;
         border-radius: 0;
         width: 100%;
     }
@@ -176,9 +178,9 @@ nav {
     text-align: center;
     font-weight: 600;
     letter-spacing: 2px;
+    cursor: pointer;
     opacity: 0;
     user-select: none;
-    cursor: default;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -217,11 +219,66 @@ nav {
     filter: blur(5px);
 }
 
-/* Box end */
+/* Attraction modal */
+
+.attr-mod-dialog {
+    padding-top: 2%;
+}
+
+.attr-mod-title {
+    font-size: 2em;
+    text-align: center;
+}
+
+.modal-body img,
+.modal-body p,
+.btn-footer-buy
+{
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.modal-body img {
+    border-radius: 20px;
+    height: auto;
+}
+
+.modal-body span {
+    font-weight: 600;
+}
+
+.modal-body p {
+    margin-top: 1%;
+}
+
+.btn-footer-buy {
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.close-buy-modal {
+    font-size: 2em;
+    margin-right: -1%;
+    line-height: 0.2;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+@media (min-width: 1680px) {
+    .attr-mod-dialog {
+        width: 800px;
+    }
+}
+
+/* Login */
 
 .modalDialog {
     position: fixed;
-    font-family: Arial, Helvetica, sans-serif;
     top: 0;
     right: 0;
     bottom: 0;
@@ -265,8 +322,6 @@ nav {
     transition: 0.5s;
 }
 
-/* Login */
-
 *,:after,:before{box-sizing:border-box}
 .clearfix:after,.clearfix:before{content:'';display:table}
 .clearfix:after{clear:both;display:block}
@@ -290,6 +345,7 @@ nav {
 .login-html label {
     color: #bbb;
     cursor: pointer;
+    font-weight: 600;
 }
 
 .login-html label:hover {
@@ -431,17 +487,17 @@ nav {
     transform: rotate(0deg);
 }
 
-.login-html .sign-up:checked + .tab + .login-form .log-in-htm{
+.login-html .log-in:checked .sign-up-htm{
     visibility: hidden;
 }
 
-.login-html .log-in:checked + .tab + .tab + .login-form .sign-up-htm{
+.login-html .sign-up:checked .log-in-htm{
     visibility: hidden;
 }
 
 .hr{
     height: 2px;
-    margin: 40px 0 50px 0;
+    margin: 40px 0 35px 0;
     background: rgba(255,255,255,.2);
 }
 
