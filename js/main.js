@@ -1,10 +1,28 @@
+function changeQuantity(how) {
+    let quantity = $('#ticket-counter');
+    let ticketCounter = parseInt(quantity.text(), 10);
+    console.log(ticketCounter);
+    if (how == 'down') {
+        if (ticketCounter > 1) {
+            ticketCounter -= 1;
+        } else {
+            ticketCounter = 1;
+        }
+    } else if (how == 'up') {
+        ticketCounter += 1;
+    } else {
+        ticketCounter = 1;
+    }
+    quantity.text(ticketCounter);
+}
+
 $('#attractionModal').on('show.bs.modal', function (event) {
-    let button = $(event.relatedTarget);// Button that triggered the modal
-    let attractionName = button.data('name'); // Extract info from data-* attributes
-    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-    let modal = $(this)
-    modal.find('.modal-title').text(attractionName);
+    let box = $(event.relatedTarget);
+    let name = box.data('name');
+    let quantity = box.data('quantity');
+    let modal = $(this);
+    modal.find('.modal-title').text(name);
+    $('#ticket-counter').text(quantity);
 });
 
 function openModal(flag) {

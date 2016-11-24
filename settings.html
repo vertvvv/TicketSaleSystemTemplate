@@ -35,7 +35,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Your Profile<span class="caret"></span></a>
                     <ul class="dropdown-menu dropdown-menu-fix">
-                        <li><a href="main.html">Home</a></li>
+                        <li><a href="#">Shopping Cart</a></li>
                         <li><a href="#">Orders</a></li>
                         <li><a href="settings.html">Settings</a></li>
                         <li role="separator" class="divider"></li>
@@ -46,76 +46,63 @@
         </div>
     </div>
 </nav>
-<!--
-<header class="header-outer">
-    <div class="header-inner">
-        <h1>Ticket Sale System</h1>
-        <nav>
-            <span>Welcome,</span>
-            <ul class="navigation">
-                <a class="main-link" href="#url">Username</a>
-                <li class="n1"><a class="dropdown-link" href="main.html">Home</a></li>
-                <li class="n2"><a class="dropdown-link" href="#">Orders</a></li>
-                <li class="n3"><a class="dropdown-link" href="settings.html">Settings</a></li>
-                <li class="n4"><a class="dropdown-link" href="#">Logout</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
--->
 
-<div class="container main-container">
+<div class="container settings-main">
     <div id="display">
         <h1>Settings</h1>
-        <div id="main-profile">
-            <div class="info-container container">
-                <form class="form-horizontal">
-                    <div class="form-group">
-                        <label for="inputName" class="col-sm-4 control-label">Your name:</label>
-                        <div class="col-sm-8">
-                            <input class="form-control" id="inputName" placeholder="Name">
+        <div class="row">
+            <div class="col-md-8 col-sm-12 info-padding">
+                <div class="info-container container">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="inputName" class="col-sm-4 control-label">Your name:</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="inputName" placeholder="Name">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputSurname" class="col-sm-4 control-label">Your surname:</label>
-                        <div class="col-sm-8">
-                            <input class="form-control" id="inputSurname" placeholder="Surname">
+                        <div class="form-group">
+                            <label for="inputSurname" class="col-sm-4 control-label">Your surname:</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="inputSurname" placeholder="Surname">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputBirthDate" class="col-sm-4 control-label">Birth Date:</label>
-                        <div class="col-sm-8">
-                            <input class="form-control" id="inputBirthDate" placeholder="XX.XX.XXXX">
+                        <div class="form-group">
+                            <label for="inputBirthDate" class="col-sm-4 control-label">Birth Date:</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="inputBirthDate" placeholder="XX.XX.XXXX">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputEmail" class="col-sm-4 control-label">Email:</label>
-                        <div class="col-sm-8">
-                            <input type="email" class="form-control" id="inputEmail" placeholder="Email" disabled>
+                        <div class="form-group">
+                            <label for="inputEmail" class="col-sm-4 control-label">Email:</label>
+                            <div class="col-sm-8">
+                                <input type="email" class="form-control" id="inputEmail" placeholder="Email" disabled>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputPassword" class="col-sm-4 control-label">Password:</label>
-                        <div class="col-sm-8">
-                            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                        <div class="form-group">
+                            <label for="inputPassword" class="col-sm-4 control-label">Password:</label>
+                            <div class="col-sm-8">
+                                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputPasswordConfirm" class="col-sm-4 control-label">Confirm:</label>
-                        <div class="col-sm-8">
-                            <input type="password" class="form-control" id="inputPasswordConfirm" placeholder="Password">
+                        <div class="form-group">
+                            <label for="inputPasswordConfirm" class="col-sm-4 control-label">Confirm:</label>
+                            <div class="col-sm-8">
+                                <input type="password" class="form-control" id="inputPasswordConfirm" placeholder="Password">
+                            </div>
                         </div>
-                    </div>
-                    <button type="submit" class="btn btn-block btn-default">Change</button>
-                </form>
+                        <button type="submit" class="btn btn-block btn-default">Change</button>
+                    </form>
+                </div>
             </div>
-            <div class="menu-container container">
-                <span>My profile</span>
-                <div class="btn-group-vertical no-float">
-                    <button class="btn btn-default btn-block btn-lg" onclick="location.href='main.html';">Home</button>
-                    <button class="btn btn-default btn-block btn-lg">Orders</button>
-                    <button class="btn btn-default btn-block btn-lg">Settings</button>
-                    <button class="btn btn-default btn-block btn-lg">Logout</button>
+            <div class="col-md-4 col-sm-12 menu-padding">
+                <div class="menu-container container">
+                    <span>My profile</span>
+                    <div class="btn-group-vertical no-float">
+                        <button class="btn btn-default btn-block btn-lg">Shopping Cart</button>
+                        <button class="btn btn-default btn-block btn-lg">Orders</button>
+                        <button class="btn btn-default btn-block btn-lg">Settings</button>
+                        <button class="btn btn-default btn-block btn-lg">Logout</button>
+                    </div>
                 </div>
             </div>
         </div>
