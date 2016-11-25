@@ -339,13 +339,12 @@ nav {
 
 @media (min-width: 992px) {
     .modal-body p {
-        margin-bottom: 15%;
+        margin-bottom: 5%;
     }
 }
 
-
 .modal-body p:first-child {
-    margin-top: 5%;
+    margin-top: 3%;
 }
 
 .btn-footer-buy {
