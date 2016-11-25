@@ -1,7 +1,6 @@
 function changeQuantity(how) {
     let quantity = $('#ticket-counter');
     let ticketCounter = parseInt(quantity.text(), 10);
-    console.log(ticketCounter);
     if (how == 'down') {
         if (ticketCounter > 1) {
             ticketCounter -= 1;
@@ -20,9 +19,11 @@ $('#attractionModal').on('show.bs.modal', function (event) {
     let box = $(event.relatedTarget);
     let name = box.data('name');
     let quantity = box.data('quantity');
+    let id = box.attr('id');
     let modal = $(this);
     modal.find('.modal-title').text(name);
     $('#ticket-counter').text(quantity);
+    $('#attrid').attr('src', 'img/' + id + '.png');
 });
 
 function openModal(flag) {
@@ -33,3 +34,14 @@ function openModal(flag) {
     }
 }
 
+$(function () {
+    for (let i = 1; i < 10; i++) {
+        let nameID = '#attr' + i;
+        let name = 'attr' + i;
+        $(nameID + " > .box-icon").css('background-image', 'url(img/' + name + '.png)');
+    }
+});
+
+$(window).on('load', function () {
+    $('#page-preloader').delay(1000).fadeOut('slow');
+});
