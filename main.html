@@ -1,34 +1,41 @@
+<!DOCTYPE html>
+
 <html>
 
 <head>
 
-<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ticket Sale System</title>
+    <title>Ticket Sale System</title>
 
-<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/main.css" rel="stylesheet"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
 </head>
 
 <body>
 
 <div id="page-preloader">
-        <div class='preloader-dotline'>
-            <div class='dot'></div>
-            <div class='dot'></div>
-            <div class='dot'></div>
-            <div class='dot'></div>
-            <div class='dot'></div>
-            <div class='dot'></div>
-            <div class='dot'></div>
-            <div class='dot'></div>
-        </div>
+    <div class='preloader-dotline'>
+        <div class='dot'></div>
+        <div class='dot'></div>
+        <div class='dot'></div>
+        <div class='dot'></div>
+        <div class='dot'></div>
+        <div class='dot'></div>
+        <div class='dot'></div>
+        <div class='dot'></div>
+    </div>
 </div>
 
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid navbar-container">
+
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
@@ -41,14 +48,16 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-left">
-                <li><a href="settings.html">test(settings)</a></li>
+                <li><a href="settings.html">stngs</a></li>
+                <li><a href="orders.html">ordrs</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#openModal" onclick="openModal(true);">Log in</a></li>
+                <li><a href="#openModal" onclick="openLoginModal(true);">Log in</a></li>
                 <li><a class="separator">|</a></li>
-                <li><a href="#openModal" onclick="openModal(false);">Sign up</a></li>
+                <li><a href="#openModal" onclick="openLoginModal(false);">Sign up</a></li>
             </ul>
         </div>
+
     </div>
 </nav>
 
@@ -80,8 +89,9 @@
 
                     <div class="hr"></div>
                     <div class="foot-lnk">
-                        <a href="#forgot">Forgot Password?</a>
+                        <a href="#">Forgot Password?</a>
                     </div>
+
                 </div>
 
                 <div class="sign-up-htm">
@@ -101,6 +111,7 @@
                 </div>
 
             </div>
+
         </div>
     </div>
 </div>
@@ -108,30 +119,33 @@
 <div id="attractionModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
     <div class="modal-dialog attr-mod-dialog" role="document">
         <div class="modal-content">
+
             <div class="modal-header">
                 <button type="button" class="close close-buy-modal" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h1 class="modal-title attr-mod-title" id="exampleModalLabel">New message</h1>
             </div>
+
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-8 col-sm-12">
-                        <img id="attrid">
+                        <img id="attrid" src="" alt="Attraction image">
                     </div>
                     <div class="col-md-4 col-sm-12">
                         <p><span>Category:</span> Kids</p>
                         <p><span>Price:</span> 10$</p>
-                        <p><span>Description:</span> Best attraction ever blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah</p>
+                        <p><span>Description:</span> Best attraction ever blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah</p>
                         <p><span>Quantity:</span>
                             <span class="glyphicon glyphicon-minus change-quant" onclick="changeQuantity('down')"></span>
                             <span id="ticket-counter"></span>
                             <span class="glyphicon glyphicon-plus change-quant" onclick="changeQuantity('up')"></span></p>
                     </div>
                 </div>
-
             </div>
+
             <div class="modal-footer">
                 <button type="button" class="btn btn-block btn-primary btn-footer-buy">Add to cart</button>
             </div>
+
         </div>
     </div>
 </div>
@@ -202,12 +216,6 @@
     </div>
 </div>
 
-<footer>
-
-</footer>
-
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 
 </body>

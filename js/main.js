@@ -26,8 +26,8 @@ $('#attractionModal').on('show.bs.modal', function (event) {
     $('#attrid').attr('src', 'img/' + id + '.png');
 });
 
-function openModal(flag) {
-    if (flag) {
+function openLoginModal(value) {
+    if (value) {
         $("#tab-1").prop('checked', true);
     } else {
         $("#tab-2").prop('checked', true);
@@ -42,6 +42,6 @@ $(function () {
     }
 });
 
-$(window).on('load', function () {
+$(window).load(function () {
     $('#page-preloader').delay(1000).fadeOut('slow');
 });

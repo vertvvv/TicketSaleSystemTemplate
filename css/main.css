@@ -138,41 +138,44 @@ body {
     border-radius: 30px;
     text-align: center;
     font-weight: 500;
-    padding-bottom: 5%;;
-    margin-top: 100px;
-    padding-left: 10%;
     padding-right: 10%;
+    padding-bottom: 5%;
+    padding-left: 10%;
+    margin-top: 100px;
     margin-bottom: 50px;
 }
 
 @media (max-width: 767px) {
     .main-container {
         background-color: rgba(255, 255, 255, 0);
+        width: 100%;
+        border-radius: 0;
         margin-top: 50px;
         margin-bottom: 0;
-        border-radius: 0;
-        width: 100%;
     }
 }
 
 .main-container h1,
-.settings-main h1{
-    padding-top: 3%;
+.settings-main h1,
+.orders-main h1{
     font-size: 1.8em;
+    padding-top: 3%;
 }
 
 .main-container h2 {
-    padding-top: 1%;
     font-size: 1.2em;
+    padding-top: 1%;
     padding-bottom: 3%;
 }
 
 @media (max-width: 767px) {
     .main-container h1,
-    .settings-main h1{
+    .settings-main h1,
+    .orders-main h1{
         padding-top: 5%;
     }
-    .settings-main h1{
+    .settings-main h1,
+    .orders-main h1{
         padding-bottom: 3%;
     }
     .main-container h2{
@@ -181,8 +184,8 @@ body {
 }
 
 #main {
-    margin:0 auto;
-    font-size:0;
+    margin: 0 auto;
+    font-size: 0;
 }
 
 /*Header*/
@@ -213,15 +216,6 @@ nav {
     .brand-link {
         font-size: 1.7em;
     }
-}
-
-.dropdown-menu-fix {
-    min-width: 100px;
-    font-weight: 600;
-}
-
-.dropdown-menu-fix li a {
-    font-weight: 600;
 }
 
 .navbar-container {
@@ -257,12 +251,12 @@ nav {
 }
 
 .box-title {
-    margin-top: -23%;
     color: #333;
     font-size: 3vw;
     text-align: center;
     font-weight: 600;
     letter-spacing: 2px;
+    margin-top: -23%;
     cursor: pointer;
     opacity: 0;
     user-select: none;
@@ -274,8 +268,8 @@ nav {
 
 @media (min-width: 768px) {
     .box-title {
-        margin-top: -57%;
         font-size: 2vw;
+        margin-top: -57%;
     }
 }
 
@@ -316,13 +310,8 @@ nav {
     text-align: center;
 }
 
-.modal-body img,
-.btn-footer-buy
-{
-    width: 100%;
-}
-
 .modal-body img {
+    width: 100%;
     border-radius: 5px;
     height: auto;
 }
@@ -348,6 +337,7 @@ nav {
 }
 
 .btn-footer-buy {
+    width: 100%;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -356,8 +346,8 @@ nav {
 
 .close-buy-modal {
     font-size: 2em;
-    margin-right: -1%;
     line-height: 0.2;
+    margin-right: -1%;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -404,22 +394,25 @@ nav {
 
 .close-new {
     color: #000;
+    width: 24px;
+    text-align: center;
     font-family: 'Open Sans', sans-serif;
-    opacity: 1;
+    font-size: 2em;
+    font-weight: 600;
     line-height: 25px;
     position: absolute;
-    text-align: center;
     right: 3px;
     top: 0;
-    width: 24px;
+    opacity: 1;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 2em;
 }
 
 .close-new:hover {
     color: #bbb;
     text-decoration: none;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
     transition: 0.5s;
 }
 
@@ -428,19 +421,19 @@ nav {
 .clearfix:after{clear:both;display:block}
 
 .login-wrap{
+    position: relative;
     width: 100%;
-    margin: auto;
     max-width: 425px;
     min-height: 475px;
-    position: relative;
+    margin: auto;
 }
 
 .login-html{
+    background-color: rgba(100, 120, 152, 0.95);
     width: 100%;
     height: 100%;
     position: absolute;
     padding: 10% 7% 0 7%;
-    background-color: rgba(100, 120, 152, 0.95);
 }
 
 .login-html label {
@@ -451,18 +444,26 @@ nav {
 
 .login-html label:hover {
     color: #fff;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
     transition: 0.5s;
 }
 
 .login-html .log-in-htm,
 .login-html .sign-up-htm{
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    position: absolute;
     transform: rotateY(180deg);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
     backface-visibility: hidden;
+    -webkit-transition: all .4s linear;
+    -moz-transition: all .4s linear;
+    -o-transition: all .4s linear;
     transition: all .4s linear;
 }
 
@@ -478,11 +479,11 @@ nav {
 }
 
 .login-html .tab{
+    display: inline-block;
     font-size: 1.4em;
+    border-bottom: 2px solid transparent;
     padding-bottom: 5px;
     margin: 0 15px 10px 0;
-    display: inline-block;
-    border-bottom: 2px solid transparent;
 }
 
 .login-html .log-in:checked + .tab,
@@ -506,17 +507,17 @@ nav {
 .login-form label,
 .login-form input,
 .login-form .button{
-    width: 100%;
     color: #fff;
     display: block;
+    width: 100%;
 }
 
 .login-form input,
 .login-form .button{
-    border: none;
-    padding: 15px 20px;
-    border-radius: 25px;
     background: rgba(255,255,255,.1);
+    border: none;
+    border-radius: 25px;
+    padding: 15px 20px;
 }
 
 .login-form input[data-type="password"]{
@@ -533,12 +534,12 @@ nav {
 }
 
 .login-form label .icon{
+    display: inline-block;
+    background: rgba(255,255,255,.1);
+    position: relative;
     width: 15px;
     height: 15px;
     border-radius: 2px;
-    position: relative;
-    display: inline-block;
-    background: rgba(255,255,255,.1);
 }
 
 .login-form label .icon:before,
@@ -546,8 +547,11 @@ nav {
     content: '';
     width: 10px;
     height: 2px;
-    background: #fff;
     position: absolute;
+    background: #fff;
+    -webkit-transition: all .2s ease-in-out 0s;
+    -moz-transition: all .2s ease-in-out 0s;
+    -o-transition: all .2s ease-in-out 0s;
     transition: all .2s ease-in-out 0s;
 }
 
@@ -588,18 +592,10 @@ nav {
     transform: rotate(0deg);
 }
 
-.login-html .log-in:checked .sign-up-htm{
-    visibility: hidden;
-}
-
-.login-html .sign-up:checked .log-in-htm{
-    visibility: hidden;
-}
-
 .hr{
+    background: rgba(255,255,255,.2);
     height: 2px;
     margin: 40px 0 35px 0;
-    background: rgba(255,255,255,.2);
 }
 
 .foot-lnk{
@@ -623,32 +619,30 @@ nav {
 
 /*PROFILE.HTML*/
 
-/* Profile Page */
-
 .settings-main {
-    width: 80%;
     background-color: #f0f0f0;
-    opacity: 1;
-    border-radius: 30px;
     text-align: center;
-    font-weight: 500;
-    padding-bottom: 5%;;
-    margin-top: 100px;
+    width: 80%;
+    border-radius: 30px;
+    font-weight: 300;
     padding-right: 2%;
+    padding-bottom: 5%;
     padding-left: 2%;
+    margin-top: 100px;
     margin-bottom: 50px;
+    opacity: 1;
 }
 
 @media (max-width: 767px) {
     .settings-main {
         background-color: rgba(255, 255, 255, 0);
-        margin-top: 50px;
-        padding-right: 15px;
-        padding-left: 15px;
-        margin-bottom: 0;
-        border-radius: 0;
         width: 100%;
         height: calc(100% - 50px);
+        border-radius: 0;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-top: 50px;
+        margin-bottom: 0;
     }
 }
 
@@ -665,15 +659,15 @@ nav {
 }
 
 .info-container {
-    padding: 2% 2% 2% 1%;
-    font-size: 0.85em;
-    font-weight: 600;
-    text-align: left;
-    margin: 2vw 0 0 0;
-    border: 1px solid rgb(210,210,210);
-    border-radius: 10px;
     background-color: #f8f8f8;
     width: 100%;
+    text-align: left;
+    font-size: 0.85em;
+    font-weight: 600;
+    border: 1px solid rgb(210,210,210);
+    border-radius: 10px;
+    padding: 2% 2% 2% 1%;
+    margin: 2vw 0 0 0;
 }
 
 @media (max-width: 767px) {
@@ -683,11 +677,10 @@ nav {
     }
 }
 
-
 .info-container .form-group {
-    line-height: 30px;
     display: block;
     text-align: right;
+    line-height: 30px;
     margin-bottom: 20px;
 }
 
@@ -712,14 +705,14 @@ nav {
 }
 
 .profile-container {
-    padding: 5% 8% 5% 8%;
-    font-weight: 300;
+    background-color: #f8f8f8;
     text-align: center;
-    margin: 2vw 0 0 0;
+    width: 100%;
     border: 1px solid rgb(210,210,210);
     border-radius: 10px;
-    background-color: #f8f8f8;
-    width: 100%;
+    font-weight: 300;
+    padding: 5% 8% 5% 8%;
+    margin: 2vw 0 0 0;
 }
 
 @media (max-width: 991px) {
@@ -733,8 +726,8 @@ nav {
 }
 
 .profile-container p {
-    margin-top: 7%;
     font-size: 1vw;
+    margin-top: 7%;
 }
 
 @media (min-width: 1599px) {
@@ -746,3 +739,66 @@ nav {
 .img-thumbnail {
     border-radius: 10px;
 }
+
+/*ORDERS.HTML*/
+
+.orders-main {
+    background-color: #f0f0f0;
+    text-align: center;
+    width: 80%;
+    border-radius: 30px;
+    font-weight: 300;
+    padding-right: 2%;
+    padding-bottom: 2%;
+    padding-left: 2%;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    opacity: 1;
+}
+
+@media (max-width: 767px) {
+    .orders-main {
+        background-color: rgba(255, 255, 255, 0);
+        width: 100%;
+        height: calc(100% - 50px);
+        border-radius: 0;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-top: 50px;
+        margin-bottom: 0;
+    }
+}
+
+.table-container {
+    background-color: #fff;
+    font-size: 1em;
+    font-weight: 300;
+    text-align: center;
+    border: 1px solid rgb(210,210,210);
+    margin-top: 2vw;
+}
+
+thead {
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+thead>tr>th {
+    text-align: center;
+}
+
+td {
+    vertical-align: middle !important;
+}
+
+td>img {
+    width: 150px;
+    height: 150px;
+}
+
+@media (max-width: 767px) {
+    table {
+        background-color: #fff;
+    }
+}
+
