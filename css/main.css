@@ -781,7 +781,7 @@ nav {
     margin: 2vw 0 0 0;
 }
 
-@media (min-width: 767px) {
+@media (min-width: 768px) {
     .orders-container {
         background-repeat: no-repeat;
         background-position: center;
@@ -797,7 +797,7 @@ nav {
     border-radius: 20px;
 }
 
-@media (min-width: 1599px) {
+@media (min-width: 1600px) {
     .orders-container {
         width: 60%;
         margin: auto;
@@ -817,6 +817,15 @@ nav {
     text-align: center;
     width: 150px;
     height: 150px;
+}
+
+@media (max-width: 468px) {
+    .ticket-image {
+        width: 100%;
+        height: auto;
+        padding-top: 5%;
+    }
+
 }
 
 @media (max-width: 991px) {
