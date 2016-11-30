@@ -742,6 +742,13 @@ nav {
 
 /*ORDERS.HTML*/
 
+
+.vcenter {
+    display: inline-block;
+    float: none;
+    vertical-align: middle;
+}
+
 .orders-main {
     background-color: #f0f0f0;
     text-align: center;
@@ -770,10 +777,12 @@ nav {
 }
 
 .orders-container {
-    background-color: #f8f8f8;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     width: 100%;
     text-align: left;
-    font-size: 1em;
+    font-size: 0;
     font-weight: 600;
     border: 1px solid rgb(210,210,210);
     border-radius: 10px;
@@ -783,18 +792,28 @@ nav {
 
 @media (min-width: 768px) {
     .orders-container {
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
         width: 80%;
         margin: auto;
         margin-top: 2vw;
     }
 }
 
+@media (max-width: 767px) {
+    .orders-container:last-child {
+        margin-bottom: 4vw;
+    }
+}
+
 .ticket-info-container {
     background: rgba(240, 240, 240, 0.85);
     border-radius: 20px;
+    font-size: 16px;
+}
+
+@media (min-width: 768px) {
+    .ticket-info-container {
+        padding-left: 5%;
+    }
 }
 
 @media (min-width: 1600px) {
@@ -806,11 +825,11 @@ nav {
 }
 
 .orders-container p {
-    margin-bottom: 4%;
+    margin-bottom: 5.5%;
 }
 
 .ticket-name {
-    margin-top: 3%;
+    margin-top: 5.5%;
 }
 
 .ticket-image {
@@ -823,7 +842,6 @@ nav {
     .ticket-image {
         width: 100%;
         height: auto;
-        padding-top: 5%;
     }
 
 }
@@ -834,24 +852,21 @@ nav {
     }
 }
 
-button.print-button {
-    width: 100px;
-    height: 100px;
-}
 span.print-icon, span.print-icon::before, span.print-icon::after, button.print-button:hover .print-icon::after {
     border: solid 4px #333;
 }
+
 span.print-icon::after {
     border-width: 2px;
 }
 
 button.print-button {
+    width: 100px;
+    height: 100px;
     padding: 0;
     border: 0;
     margin-left: 75%;
     margin-right: 25%;
-    margin-top: 25px;
-    margin-bottom: 4px;
     border: none;
     background: transparent;
 }
@@ -879,7 +894,9 @@ span.print-icon::before {
     left: 12%;
     right: 12%;
     height: 110%;
-
+    -webkit-transition: height .2s .15s;
+    -moz-transition: height .2s .15s;
+    -o-transition: height .2s .15s;
     transition: height .2s .15s;
 }
 
@@ -889,7 +906,7 @@ span.print-icon::after {
     top: 55%;
     left: 12%;
     right: 12%;
-    height: 0%;
+    height: 0;
     background: #fff;
     background-repeat: no-repeat;
     background-size: 70% 90%;
@@ -904,7 +921,9 @@ span.print-icon::after {
             #333 70%, #333 84%,
             #fff 84%, #fff 100%
     );
-
+    -webkit-transition: height .2s, border-width 0s .2s, width 0s .2s;
+    -moz-transition: height .2s, border-width 0s .2s, width 0s .2s;
+    -o-transition: height .2s, border-width 0s .2s, width 0s .2s;
     transition: height .2s, border-width 0s .2s, width 0s .2s;
 }
 
@@ -913,19 +932,16 @@ button.print-button:hover {
 }
 
 button.print-button:hover .print-icon::before {
-    height:0px;
+    height: 0;
+    -webkit-transition: height .2s;
+    -moz-transition: height .2s;
+    -o-transition: height .2s;
     transition: height .2s;
 }
 button.print-button:hover .print-icon::after {
-    height:120%;
+    height: 120%;
+    -webkit-transition: height .2s, border-width 0s .16s;
+    -moz-transition: height .2s, border-width 0s .16s;
+    -o-transition: height .2s, border-width 0s .16s;
     transition: height .2s .15s, border-width 0s .16s;
-}
-
-.ticket-status-true {
-    background-color: lime;
-
-    margin: auto;
-    width: 15px;
-    height: 15px;
-    border-radius: 7.5px;
 }
