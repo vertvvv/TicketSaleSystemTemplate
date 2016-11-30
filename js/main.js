@@ -40,6 +40,11 @@ $(function () {
         let name = 'attr' + i;
         $(nameID + " > .box-icon").css('background-image', 'url(img/' + name + '.png)');
     }
+    for (let i = 1; i < 5; i++) {
+        let ticketID = '#ticket' + i;
+        let name = 'attr' + i;
+        $(ticketID).css('background-image', 'url(img/' + name + '.png)');
+    }
 });
 
 $(window).load(function () {
