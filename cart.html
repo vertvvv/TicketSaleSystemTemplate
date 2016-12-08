@@ -1,0 +1,136 @@
+<html>
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shopping Cart - Ticket Sale System</title>
+
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/main.css" rel="stylesheet"/>
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid navbar-container">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand brand-link" href="main.html">Ticket Sale System</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Your Profile<span class="caret"></span></a>
+                    <ul class="dropdown-menu dropdown-menu-fix">
+                        <li><a href="cart.html">Shopping Cart</a></li>
+                        <li><a href="orders.html">Orders</a></li>
+                        <li><a href="settings.html">Settings</a></li>
+                        <li><a href="#">Technical Support</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+<!--<h2 id="cart-empty">Cart is currently empty. <a>Here</a> you can buy some tickets.</h2>-->
+
+<div class="container cart-main">
+    <div id="display">
+
+        <h1>Shopping Cart</h1>
+
+        <div id="ticket1" class="cart-item container row">
+            <div class="col-md-3 col-xs-7 cart-item-img vcenter">
+                <img class="attr-img" title="QR-код" alt="id123012394">
+            </div>
+            <div class="col-md-5 col-xs-6 cart-item-info vcenter">
+                <p class="cart-item-name">Attraction: <span>Ferris Wheel</span></p>
+                <p class="cart-item-price">Price: <span>$10.00</span></p>
+                <p>
+                    <span class="quantity-mobile-fix">Quantity:</span>
+                    <span class="glyphicon glyphicon-minus change-quant" onclick="changeQuantity('down', 1)"></span>
+                    <span id="ticket-counter1">1</span>
+                    <span class="glyphicon glyphicon-plus change-quant" onclick="changeQuantity('up', 1)"></span>
+                </p>
+            </div>
+            <div class="col-md-3 col-xs-3 cart-item-sum vcenter">
+                <span>$</span><span id="ticket-sum-price1" price="10">10.00</span>
+            </div>
+            <div class="col-md-1 col-xs-3 vcenter">
+                <button class="close-ticket" onclick="ticketHide(1)">X</button>
+            </div>
+        </div>
+
+        <div id="ticket2" class="cart-item container row">
+            <div class="col-md-3 col-xs-7 cart-item-img vcenter">
+                <img class="attr-img" title="QR-код" alt="id123012394">
+            </div>
+            <div class="col-md-5 col-xs-6 cart-item-info vcenter">
+                <p class="cart-item-name">Attraction: <span>Roller-Coaster</span></p>
+                <p class="cart-item-price">Price: <span>$15.00</span></p>
+                <p>
+                    <span class="quantity-mobile-fix">Quantity:</span>
+                    <span class="glyphicon glyphicon-minus change-quant" onclick="changeQuantity('down', 2)"></span>
+                    <span id="ticket-counter2">1</span>
+                    <span class="glyphicon glyphicon-plus change-quant" onclick="changeQuantity('up', 2)"></span>
+                </p>
+            </div>
+            <div class="col-md-3 col-xs-3 cart-item-sum vcenter">
+                <span>$</span><span id="ticket-sum-price2" price="15">15.00</span>
+            </div>
+            <div class="col-md-1 col-xs-3 vcenter">
+                <button class="close-ticket" onclick="ticketHide(2)">X</button>
+            </div>
+        </div>
+
+        <div id="ticket3" class="cart-item container row">
+            <div class="col-md-3 col-xs-7 cart-item-img vcenter">
+                <img class="attr-img" title="QR-код" alt="id123012394">
+            </div>
+            <div class="col-md-5 col-xs-6 cart-item-info vcenter">
+                <p class="cart-item-name">Attraction: <span>Cordtraction</span></p>
+                <p class="cart-item-price">Price: <span>$6.50</span></p>
+                <p>
+                    <span class="quantity-mobile-fix">Quantity:</span>
+                    <span class="glyphicon glyphicon-minus change-quant" onclick="changeQuantity('down', 3)"></span>
+                    <span id="ticket-counter3">1</span>
+                    <span class="glyphicon glyphicon-plus change-quant" onclick="changeQuantity('up', 3)"></span>
+                </p>
+            </div>
+            <div class="col-md-3 col-xs-3 cart-item-sum vcenter">
+                <span>$</span><span id="ticket-sum-price3" price="6.5">6.50</span>
+            </div>
+            <div class="col-md-1 col-xs-3 vcenter">
+                <button class="close-ticket" onclick="ticketHide(3)">X</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+
+</footer>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/cart.js"></script>
+
+</body>
+
+</html>
