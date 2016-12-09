@@ -48,13 +48,17 @@ a:focus {
 
 /*Reset end*/
 
-body {
-    font-family: 'Open Sans', sans-serif;
+html {
     background: url('../img/background.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: rgba(255,255,255,0);
 }
 
 #page-preloader {
@@ -1113,7 +1117,6 @@ button.print-button:hover .print-icon::after {
     .cart-amount-total {
         text-align: right;
     }
-
     .cart-amount-date {
         padding-left: 7%;
     }
@@ -1129,6 +1132,12 @@ button.print-button:hover .print-icon::after {
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
     transition: all 0.5s;
+}
+
+@media (max-width: 767px) {
+    .cart-amount {
+        margin-bottom: 4vw;
+    }
 }
 
 .modal-header-short {
