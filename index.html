@@ -40,7 +40,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand brand-link" href="main.html">Ticket Sale System</a>
+            <a class="navbar-brand brand-link" href="index.html">Ticket Sale System</a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -49,9 +49,9 @@
             </ul>
             <div id="menutest">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#openModal" onclick="openLoginModal(true);">Log in</a></li>
+                    <li><a href="#openModal" onclick="openLoginModal(true);" data-toggle="modal" data-target="#openModal">Log in</a></li>
                     <li><a class="separator">|</a></li>
-                    <li><a href="#openModal" onclick="openLoginModal(false);">Sign up</a></li>
+                    <li><a href="#openModal" onclick="openLoginModal(false);" data-toggle="modal" data-target="#openModal">Sign up</a></li>
                 </ul>
             </div>
         </div>
@@ -59,10 +59,10 @@
     </div>
 </nav>
 
-<div id="openModal" class="modalDialog">
+<div id="openModal" class="login-modal modal fade" tabindex="-1" role="dialog">
     <div class="login-wrap">
         <div class="login-html">
-            <a href="#" class="close-new"><span>&times;</span></a>
+            <a href="#" class="close-new" data-dismiss="modal" aria-label="Close"><span>&times;</span></a>
 
             <input id="tab-1" type="radio" name="tab" class="log-in" checked>
             <label for="tab-1" class="tab">Log In</label>
@@ -114,7 +114,7 @@
     </div>
 </div>
 
-<div id="attractionModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+<div id="attractionModal" class="modal fade" tabindex="-1" role="dialog">
     <div class="modal-dialog attr-mod-dialog" role="document">
         <div class="modal-content">
 

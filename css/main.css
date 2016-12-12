@@ -387,30 +387,6 @@ nav {
 
 /* Login */
 
-.modalDialog {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding-top: 8%;
-    background: rgba(0,0,0,0.75);
-    z-index: 99999;
-    display: none;
-    pointer-events: none;
-}
-
-@media (max-width: 767px) {
-    .modalDialog {
-        padding-top: 28%;
-    }
-}
-
-.modalDialog:target {
-    display: block;
-    pointer-events: auto;
-}
-
 .close-new {
     color: #999;
     width: 24px;
@@ -435,20 +411,23 @@ nav {
     transition: 0.5s;
 }
 
-*,:after,:before{box-sizing:border-box}
-.clearfix:after,.clearfix:before{content:'';display:table}
-.clearfix:after{clear:both;display:block}
-
 .login-wrap{
     position: relative;
     width: 100%;
     max-width: 425px;
     min-height: 475px;
     margin: auto;
+    padding-top: 5%;
+}
+
+@media (max-width: 767px) {
+    .login-wrap {
+        padding-top: 15%;
+    }
 }
 
 .login-html{
-    background-color: rgba(230, 230, 230, 0.95);
+    background-color: rgba(230, 230, 230, 0.98);
     width: 100%;
     height: 100%;
     position: absolute;
@@ -1160,9 +1139,19 @@ button.print-button:hover .print-icon::after {
     line-height: 25px;
 }
 
+.modal-header {
+    font-size: 0.8em;
+}
+
 #completeDate,
 #completeCost {
     font-weight: 300;
+}
+
+@media (max-width: 767px) {
+    .modal-header-short {
+        width: 100%;
+    }
 }
 
 .inline-mobile-fix-form {
@@ -1294,6 +1283,12 @@ button.print-button:hover .print-icon::after {
 }
 
 @media (max-width: 767px) {
+    .common-questions,
+    .questions {
+        padding: 10%;
+        padding-top: 6%;
+        padding-bottom: 6%;
+    }
     .questions {
         margin-bottom: 4vw;
     }
@@ -1332,11 +1327,11 @@ textarea {
 }
 
 .modal-question {
-    background-color: #f0f0f0;
-    float: left;
+    background-color: #ddd;
+    float: right;
 }
 
 .modal-answer {
-    background-color: #ddd;
-    float: right;
+    background-color: #f0f0f0;
+    float: left;
 }

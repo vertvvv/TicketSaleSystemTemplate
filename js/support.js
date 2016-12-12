@@ -8,7 +8,7 @@ $('#dialogModal').on('show.bs.modal', function (event) {
 function messageSent() {
     let modalBody = $('#modalBody');
     modalBody.load("assets/support_success_message.html");
-    setTimeout(function() {window.location = 'main.html'},3000)
+    setTimeout(function() {window.location = 'support.html'},3000)
 }
 
 function sendMessage() {
