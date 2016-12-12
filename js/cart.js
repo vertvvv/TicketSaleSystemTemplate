@@ -36,10 +36,18 @@ function changeQuantity(how, item) {
 function totalAmount() {
     let totalcost = 0;
     for (let i = 1; i < 4; i++) {
-        let ticketprice = $('#ticket-sum-price' + i).text();
-        totalcost += parseFloat(ticketprice);
+        let ticket = $('#ticket-sum-price' + i);
+        let parentdiv = ticket.parent().parent();
+        let ticketprice = ticket.text();
+        if (!(parentdiv.hasClass('hidden-ticket'))) {
+            totalcost += parseFloat(ticketprice);
+        }
     }
-    $("#totalAmount").text(totalcost);
+    if (totalcost == 0) {
+        cartEmpty(true);
+    } else {
+        $("#totalAmount").text(totalcost);
+    }
 }
 
 function ticketHide(item) {
@@ -47,7 +55,21 @@ function ticketHide(item) {
     ticket.addClass('nonvisible-ticket');
     ticket.delay(1000).queue(function() {
         $(this).removeClass('nonvisible-ticket').addClass('hidden-ticket');
+        totalAmount();
     });
+}
+
+function cartEmpty(flag) {
+    let main = $('#display');
+    let link = $('#testEmpty');
+    if (flag) {
+        main.load('assets/cart_empty.html');
+        link.text('with tickets').attr('onclick', 'cartEmpty(false); return false;');
+    } else {
+        main.load('assets/cart_full.html');
+        link.text('when empty').attr('onclick', 'cartEmpty(true); return false;');
+        setTimeout(function() {loadInfo()},50);
+    }
 }
 
 function checkDate() {
@@ -56,11 +78,13 @@ function checkDate() {
     $("#completeCost").text($("#totalAmount").text());
 }
 
-$(function () {
+$(loadInfo());
+
+function loadInfo() {
     for (let i = 1; i < 4; i++) {
         let ticketID = '#ticket' + i;
         let name = 'attr' + i;
         $(ticketID + ' > .cart-item-img > .attr-img').attr('src', 'img/' + name + '.png');
     }
     totalAmount();
-});
+}

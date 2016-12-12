@@ -1,0 +1,179 @@
+<html>
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support Service - Ticket Sale System</title>
+
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/main.css" rel="stylesheet"/>
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid navbar-container">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand brand-link" href="main.html">Ticket Sale System</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Your Profile<span class="caret"></span></a>
+                    <ul class="dropdown-menu dropdown-menu-fix">
+                        <li><a href="cart.html">Shopping Cart</a></li>
+                        <li><a href="orders.html">Orders</a></li>
+                        <li><a href="settings.html">Settings</a></li>
+                        <li><a href="support.html">Technical Support</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="main.html">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+<div id="newThemeModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog attr-mod-dialog" role="document">
+        <div class="modal-content modal-header-short">
+
+            <div class="modal-header">
+                <button type="button" class="close close-buy-modal" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h1 class="modal-title attr-mod-title">New question</h1>
+            </div>
+
+            <div id="modalBody" class="modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input class="form-control" id="inputName" placeholder="Theme">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <textarea class="form-control" rows="6" placeholder="Your message..."></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" onclick="messageSent()" class="btn btn-block btn-primary btn-footer-buy">Send message</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div id="dialogModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog attr-mod-dialog" role="document">
+        <div class="modal-content modal-header-short">
+
+            <div class="modal-header">
+                <button type="button" class="close close-buy-modal" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h1 class="modal-title attr-mod-title">New question</h1>
+            </div>
+
+            <div class="modal-body">
+                <div class="modal-message modal-question">
+                    How can I cure my autism?
+                </div>
+                <div class="modal-message modal-answer">
+                    It's easy, brah!
+                </div>
+                <div class="modal-message modal-question">
+                    So tell me pls.
+                </div>
+                <div class="modal-message modal-answer">
+                    Just delete CS:GO from your PC. Best regards, Ticket Sale System team.
+                </div>
+                <div class="modal-message modal-question">
+                    Spasibo!
+                </div>
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <textarea id="dialogMessage" class="form-control" rows="3" placeholder="Your message..."></textarea>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" onclick="sendMessage()" class="btn btn-block btn-primary btn-footer-buy">Send message</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container support-main">
+    <div id="display">
+
+        <h1>Support Service</h1>
+
+        <h2>Common questions</h2>
+
+        <div class="row common-questions">
+            <div class="col-md-6 col-xs-12">
+                <h3>Account related</h3>
+                <ul>
+                    <li><a data-container="body" data-toggle="popover" data-placement="bottom" data-content="On main page, retard.">Where can I buy tickets?</a></li>
+                    <li><a data-container="body" data-toggle="popover" data-placement="bottom" data-content="Calendar in cart, retard.">How can I choose date?</a></li>
+                    <li><a data-container="body" data-toggle="popover" data-placement="bottom" data-content="On settings page, retard.">How can I change my account settings?</a></li>
+                    <li><a data-container="body" data-toggle="popover" data-placement="bottom" data-content="No way, retard.">How can I stop asking useless questions?</a></li>
+                </ul>
+            </div>
+            <div class="col-md-6 col-xs-12">
+                <h3 class="pad-top-h3">Payment</h3>
+                <ul>
+                    <li><a data-container="body" data-toggle="popover" data-placement="bottom" data-content="All tickets for free. Enjoy!">Which payment systems can I use?</a></li>
+                    <li><a data-container="body" data-toggle="popover" data-placement="bottom" data-content="20 hours.">In what time before the visit can I book a ticket?</a></li>
+                    <li><a data-container="body" data-toggle="popover" data-placement="bottom" data-content="No way, retard.">How can I cure my autism?</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="hr-sup mobile-no-display"></div>
+
+        <h2 class="mobile-no-display">If you still have unanswered questions, ask our team</h2>
+
+        <h2>(<a class="test-link" onclick="questionsAdd(true); return false;">with questions</a> or <a class="test-link" onclick="questionsAdd(false); return false;">without questions</a>)</h2>
+
+        <div id="questions">
+
+            <div class="questions">
+                <h3>Your questions:</h3>
+                <span>You haven't any questions now.</span> <a data-toggle="modal" data-target="#newThemeModal">Ask something!</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<footer>
+
+</footer>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/support.js"></script>
+
+</body>
+
+</html>

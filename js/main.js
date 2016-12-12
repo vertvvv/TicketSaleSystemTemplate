@@ -26,6 +26,18 @@ $('#attractionModal').on('show.bs.modal', function (event) {
     $('#attrid').attr('src', 'img/' + id + '.png');
 });
 
+function profileTest(flag) {
+    let menu = $('#menutest');
+    let link = $('#testEmpty');
+    if (flag) {
+        menu.load('assets/test_profile.html');
+        link.text('test (login)').attr('onclick', 'profileTest(false); return false;');
+    } else {
+        menu.load('assets/test_login.html');
+        link.text('test (profile)').attr('onclick', 'profileTest(true); return false;');
+    }
+}
+
 function openLoginModal(value) {
     if (value) {
         $("#tab-1").prop('checked', true);
