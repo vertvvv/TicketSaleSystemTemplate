@@ -39,11 +39,17 @@ function profileTest(flag) {
 }
 
 function openLoginModal(value) {
+    let modalBody = $('#loginBody');
     if (value) {
-        $("#tab-1").prop('checked', true);
+        modalBody.load("assets/login.html");
     } else {
-        $("#tab-2").prop('checked', true);
+        modalBody.load("assets/signup.html");
     }
+}
+
+function forgotPassword() {
+    let modalBody = $('#loginBody');
+    modalBody.load("assets/login_forgot_password.html");
 }
 
 $(function () {

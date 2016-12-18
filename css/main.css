@@ -1,4 +1,20 @@
-@import url("https://fonts.googleapis.com/css?family=Oleo+Script:400|Open+Sans:300,300italic,600,600italic,800");
+@font-face {
+    font-family: 'Open Sans';
+    font-weight: 300;
+    src: url(../fonts/OpenSans-Light.ttf);
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-weight: 600;
+    src: url(../fonts/OpenSans-Semibold.ttf);
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-weight: 800;
+    src: url(../fonts/OpenSans-Bold.ttf);
+}
 
 /* Reset */
 
@@ -41,9 +57,18 @@ body {
     -webkit-text-size-adjust: none;
 }
 
+input, a, button {
+    outline: none;
+}
+
 a:focus {
     color: inherit;
     text-decoration: none;
+    outline: none;
+}
+
+button:focus {
+    outline: none !important;
 }
 
 /*Reset end*/
@@ -139,7 +164,9 @@ body {
     cursor: pointer;
 }
 
-
+.font-light {
+    font-weight: 300;
+}
 
 .main-container {
     width: 80%;
@@ -329,6 +356,10 @@ nav {
     text-align: center;
 }
 
+.modal-body {
+    font-size: 1.1em;
+}
+
 .modal-body img {
     width: 100%;
     border-radius: 5px;
@@ -342,7 +373,8 @@ nav {
 }
 
 .modal-body p {
-    margin-bottom: 1%;
+    margin-bottom: 2%;
+    line-height: 25px;
 }
 
 @media (min-width: 992px) {
@@ -391,7 +423,6 @@ nav {
     color: #999;
     width: 24px;
     text-align: center;
-    font-family: 'Open Sans', sans-serif;
     font-size: 2em;
     font-weight: 600;
     line-height: 25px;
@@ -409,6 +440,20 @@ nav {
     -moz-transition: 0.5s;
     -o-transition: 0.5s;
     transition: 0.5s;
+}
+
+.login-form h1 {
+    margin-top: 35px;
+    font-size: 1.2em;
+    font-weight: 600;
+    line-height: 60px;
+    text-align: center;
+}
+
+.login-form p {
+    font-size: 1.1em;
+    line-height: 20px;
+    text-align: center;
 }
 
 .login-wrap{

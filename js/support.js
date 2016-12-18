@@ -27,7 +27,3 @@ function questionsAdd(flag) {
         questions.load('assets/questions_false.html');
     }
 }
-
-$(function () {
-    $('[data-toggle="popover"]').popover();
-});

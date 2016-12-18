@@ -7,7 +7,7 @@
     <title>Ticket Sale System</title>
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
 
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -61,54 +61,7 @@
 
 <div id="openModal" class="login-modal modal fade" tabindex="-1" role="dialog">
     <div class="login-wrap">
-        <div class="login-html">
-            <a href="#" class="close-new" data-dismiss="modal" aria-label="Close"><span>&times;</span></a>
-
-            <input id="tab-1" type="radio" name="tab" class="log-in" checked>
-            <label for="tab-1" class="tab">Log In</label>
-
-            <input id="tab-2" type="radio" name="tab" class="sign-up">
-            <label for="tab-2" class="tab">Sign Up</label>
-
-            <div class="login-form">
-
-                <div class="log-in-htm">
-
-                    <label for="emailLogin" class="label">Email Address</label>
-                    <input id="emailLogin" type="text">
-
-                    <label for="pass" class="label">Password</label>
-                    <input id="pass" type="password" data-type="password">
-
-                    <input id="check" type="checkbox" class="check" checked>
-                    <label id="keep-sign" for="check"><span class="icon"></span> Keep me Signed in</label>
-
-                    <input type="submit" class="button" value="Log In">
-
-                    <div class="hr"></div>
-                    <div class="foot-lnk">
-                        <a href="#">Forgot Password?</a>
-                    </div>
-
-                </div>
-
-                <div class="sign-up-htm">
-
-                    <label for="email" class="label">Email Address</label>
-                    <input id="email" type="text">
-
-                    <label for="pass1" class="label">Password</label>
-                    <input id="pass1" type="password" data-type="password">
-
-                    <label for="pass2" class="label">Repeat Password</label>
-                    <input id="pass2" type="password" data-type="password">
-
-                    <label for="submit" class="label"><br></label>
-                    <input id="submit" type="submit" class="button" value="Sign Up">
-
-                </div>
-
-            </div>
+        <div id="loginBody" class="login-html">
 
         </div>
     </div>
@@ -125,13 +78,13 @@
 
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-md-8 col-sm-12">
+                    <div class="col-md-7 col-sm-12">
                         <img id="attrid" src="" alt="Attraction image">
                     </div>
-                    <div class="col-md-4 col-sm-12">
-                        <p><span>Category:</span> Kids</p>
-                        <p><span>Price:</span> 10$</p>
+                    <div class="col-md-5 col-sm-12">
                         <p><span>Description:</span> Best attraction ever blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah</p>
+                        <p><span>Category:</span> Kids</p>
+                        <p><span>Price:</span> $10.00</p>
                         <p>
                             <span>Quantity:</span>
                             <span class="glyphicon glyphicon-minus change-quant" onclick="changeQuantity('down')"></span>
