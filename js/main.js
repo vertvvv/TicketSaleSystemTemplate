@@ -47,9 +47,13 @@ function openLoginModal(value) {
     }
 }
 
-function forgotPassword() {
+function forgotPassword(flag) {
     let modalBody = $('#loginBody');
-    modalBody.load("assets/login_forgot_password.html");
+    if (flag) {
+        modalBody.load("assets/login_forgot_password.html");
+    } else {
+        modalBody.load("assets/login.html");
+    }
 }
 
 $(function () {
