@@ -372,6 +372,10 @@ nav {
     user-select: none;
 }
 
+.price-span {
+    font-weight: 300 !important;
+}
+
 .modal-body p {
     margin-bottom: 2%;
     line-height: 25px;
@@ -701,7 +705,7 @@ nav {
 
 .avatar-img {
     margin-top: -5px;
-    margin-right: 15px;
+    margin-right: 10px;
     float: left;
     width: 30px;
     height: 30px;
@@ -1444,8 +1448,15 @@ textarea {
     margin-top: 2%;
     margin-bottom: 2%;
     border-radius: 5px;
-    padding: 3% 5%;
-    width: 70%;
+    font-size: 0.85em;
+    padding: 1% 3% 0 3%;
+    width: 80%;
+}
+
+.modal-message > p {
+    margin-bottom: 0;
+    line-height: 28px;
+    overflow: hidden;
 }
 
 @media (max-width: 767px) {
@@ -1458,12 +1469,39 @@ textarea {
     margin-bottom: 6%;
 }
 
+.modal-message > img {
+    margin-top: 2px;
+}
+
 .modal-question {
     background-color: #ddd;
     float: right;
 }
 
+.modal-question > img {
+    margin-left: 10px;
+}
+
 .modal-answer {
     background-color: #f0f0f0;
     float: left;
+}
+
+.modal-answer > img {
+    margin-right: 10px;
+}
+
+.message-date {
+    font-size: 0.6em;
+    display: block;
+    float: inherit;
+    padding: 0;
+    overflow: hidden;
+}
+
+.message-img {
+    float: inherit;
+    width: 25px !important;
+    border-radius: 50% !important;
+    height: 25px;
 }

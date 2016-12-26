@@ -1,6 +1,8 @@
 function changeQuantity(how) {
     let quantity = $('#ticket-counter');
+    let sumprice = $('#price');
     let ticketCounter = parseInt(quantity.text(), 10);
+    let ticketSumPrice = parseFloat(sumprice.attr('price'));
     if (how == 'down') {
         if (ticketCounter > 1) {
             ticketCounter -= 1;
@@ -13,6 +15,8 @@ function changeQuantity(how) {
         ticketCounter = 1;
     }
     quantity.text(ticketCounter);
+    let sum = ticketCounter*ticketSumPrice;
+    sumprice.text(sum.toFixed(2));
 }
 
 $('#attractionModal').on('show.bs.modal', function (event) {

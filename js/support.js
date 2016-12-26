@@ -11,11 +11,25 @@ function messageSent() {
     setTimeout(function() {window.location = 'support.html'},3000)
 }
 
+function getFormattedTime (date) {
+    return ("0" + date.getDate()).slice(-2)
+        + "."
+        + ("0" + (date.getMonth() + 1)).slice(-2)
+        + "."
+        + date.getFullYear()
+        + ", "
+        + (date.getHours() + 4)
+        + ":"
+        + ("0" + date.getMinutes()).slice(-2);
+}
+
 function sendMessage() {
     let lastMessage = $('.modal-message:last');
     let dialogMessage = $('#dialogMessage');
+    let tomorrow = new Date(new Date().getTime() + 20 * 60 * 60 * 1000);
     lastMessage.after('<div class="modal-message modal-question">' +
-        dialogMessage.val() + '</div>');
+        '<img class="img-circle message-img" src="img/identicon8.png" alt=""><p>'
+        + dialogMessage.val() + '</p><span class="message-date">'+ getFormattedTime(tomorrow) + '</span></div>');
     dialogMessage.val('');
 }
 
