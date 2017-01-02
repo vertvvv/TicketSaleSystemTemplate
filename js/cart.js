@@ -1,5 +1,6 @@
-let tomorrow = new Date(new Date().getTime() + 20 * 60 * 60 * 1000);
-let nextyeartomorrow = new Date(new Date().getTime() + 365 * 24 * 60 * 60 * 1000);
+const tomorrow = new Date(new Date().getTime() + 20 * 60 * 60 * 1000);
+const nextyeartomorrow = new Date(new Date().getTime() + 365 * 24 * 60 * 60 * 1000);
+const directory = "assets/cart/";
 
 function getFormattedDate (date) {
     return date.getFullYear()
@@ -11,80 +12,76 @@ function getFormattedDate (date) {
 
 $("#visitDate").val(getFormattedDate(tomorrow)).attr('min', getFormattedDate(tomorrow)).attr('max', getFormattedDate(nextyeartomorrow));
 
-function changeQuantity(how, item) {
-    let quantity = $('#ticket-counter' + item);
-    let sumprice = $('#ticket-sum-price' + item);
-    let ticketCounter = parseInt(quantity.text(), 10);
-    let ticketSumPrice = parseFloat(sumprice.attr('price'));
-    if (how == 'down') {
-        if (ticketCounter > 1) {
-            ticketCounter -= 1;
-        } else {
-            ticketCounter = 1;
-        }
-    } else if (how == 'up') {
-        ticketCounter += 1;
-    } else {
-        ticketCounter = 1;
-    }
-    quantity.text(ticketCounter);
-    let sum = ticketCounter*ticketSumPrice;
-    sumprice.text(sum.toFixed(2));
-    totalAmount();
-}
-
 function totalAmount() {
-    let totalcost = 0;
+    let totalCost = 0;
     for (let i = 1; i < 4; i++) {
-        let ticket = $('#ticket-sum-price' + i);
-        let parentdiv = ticket.parent().parent();
-        let ticketprice = ticket.text();
-        if (!(parentdiv.hasClass('hidden-ticket'))) {
-            totalcost += parseFloat(ticketprice);
+        const ticket = $('#ticket-sum-price' + i);
+        const parentDiv = ticket.parent().parent();
+        const ticketPrice = ticket.text();
+        if (!(parentDiv.hasClass('hidden-ticket'))) {
+            totalCost += parseFloat(ticketPrice);
         }
     }
-    if (totalcost == 0) {
+    if (totalCost == 0) {
         cartEmpty(true);
     } else {
-        $("#totalAmount").text(totalcost);
+        $("#totalAmount").text(totalCost);
     }
 }
 
-function ticketHide(item) {
-    let ticket = $('#ticket' + item);
-    ticket.addClass('nonvisible-ticket');
-    ticket.delay(1000).queue(function() {
-        $(this).removeClass('nonvisible-ticket').addClass('hidden-ticket');
+$('body')
+    .on('click', '#testEmpty', function (e) {
+        const main = $('#display');
+        const testText = "when empty";
+        if (this.text == testText) {
+            main.load(directory + "cart_empty.html");
+            this.text = "with tickets";
+        } else {
+            main.load(directory + "cart_full.html");
+            this.text = testText;
+            setTimeout(function() {loadInfo()},50);
+        }
+    })
+
+    .on('click', '.close-ticket', function (e) {
+        const item = $(this).parent().parent().attr('id').substr(6);
+        const ticket = $('#ticket' + item);
+        ticket.addClass('nonvisible-ticket');
+        ticket.delay(1000).queue(function() {
+            $(this).removeClass('nonvisible-ticket').addClass('hidden-ticket');
+            totalAmount();
+        });
+    })
+
+    .on('click', '.btn-pay-now', function (e) {
+        let thisdate = new Date($("#visitDate").val());
+        $("#completeDate").text(thisdate.toLocaleDateString());
+        $("#completeCost").text($("#totalAmount").text());
+    })
+
+    .on('click', '.change-quant', function (e) {
+        const item = $(this).parent().parent().parent().attr('id').substr(6);
+        const quantity = $('#ticket-counter' + item);
+        const sumPrice = $('#ticket-sum-price' + item);
+        let ticketCounter = parseInt(quantity.text(), 10);
+        const how = $(this).data('how');
+
+        if (how === 'down') {
+            (ticketCounter > 1) ? ticketCounter -= 1 : ticketCounter = 1;
+        } else if (how === 'up') {
+            ticketCounter += 1;
+        } else ticketCounter = 1;
+
+        quantity.text(ticketCounter);
+        sumPrice.text((ticketCounter*parseFloat(sumPrice.data('price'))).toFixed(2));
         totalAmount();
     });
-}
-
-function cartEmpty(flag) {
-    let main = $('#display');
-    let link = $('#testEmpty');
-    if (flag) {
-        main.load('assets/cart_empty.html');
-        link.text('with tickets').attr('onclick', 'cartEmpty(false); return false;');
-    } else {
-        main.load('assets/cart_full.html');
-        link.text('when empty').attr('onclick', 'cartEmpty(true); return false;');
-        setTimeout(function() {loadInfo()},50);
-    }
-}
-
-function checkDate() {
-    let thisdate = new Date($("#visitDate").val());
-    $("#completeDate").text(thisdate.toLocaleDateString());
-    $("#completeCost").text($("#totalAmount").text());
-}
 
 $(loadInfo());
 
 function loadInfo() {
-    for (let i = 1; i < 4; i++) {
-        let ticketID = '#ticket' + i;
-        let name = 'attr' + i;
-        $(ticketID + ' > .cart-item-img > .attr-img').attr('src', 'img/' + name + '.png');
-    }
+    $('.cart-item').each(function() {
+        $(this).find('.attr-img').attr('src', 'img/attr' + this.id.substr(6) + '.png');
+    });
     totalAmount();
 }

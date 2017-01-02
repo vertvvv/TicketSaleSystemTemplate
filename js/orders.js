@@ -1,16 +1,15 @@
 $(function () {
-    for (let i = 1; i < 5; i++) {
-        let ticketID = '#ticket' + i;
-        let name = 'attr' + i;
-        $(ticketID).css('background-image', 'url(img/' + name + '.png)');
-    }
+    $('.orders-container').each(function() {
+        $(this).css('background-image', 'url(img/attr' + this.id.substr(6) + '.png)');
+    });
 });
 
-function printOrder(num) {
-    $('#order' + num).printElement(
+$('.print-button').on('click', function (e) {
+    $(this).parent().parent().parent().parent()
+        .printElement(
         {
             overrideElementCSS:[
                 'main.css',
                 { href:'css/main.css',media:'print'}]
         });
-}
+});

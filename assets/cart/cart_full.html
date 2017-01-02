@@ -9,16 +9,16 @@
                 <p class="cart-item-price">Price: <span>$10.00</span></p>
                 <p>
                     <span class="quantity-mobile-fix">Quantity:</span>
-                    <span class="glyphicon glyphicon-minus change-quant" onclick="changeQuantity('down', 1)"></span>
+                    <span class="glyphicon glyphicon-minus change-quant" data-how="down"></span>
                     <span id="ticket-counter1">1</span>
-                    <span class="glyphicon glyphicon-plus change-quant" onclick="changeQuantity('up', 1)"></span>
+                    <span class="glyphicon glyphicon-plus change-quant" data-how="up"></span>
                 </p>
             </div>
             <div class="col-md-3 col-xs-2 cart-item-sum vcenter">
-                <span>$</span><span id="ticket-sum-price1" price="10">10.00</span>
+                <span>$</span><span id="ticket-sum-price1" data-price="10">10.00</span>
             </div>
             <div class="col-md-1 col-xs-3 vcenter">
-                <button class="close-ticket" onclick="ticketHide(1)"><span class="glyphicon glyphicon-remove"></span></button>
+                <button class="close-ticket"><span class="glyphicon glyphicon-remove"></span></button>
             </div>
         </div>
 
@@ -31,16 +31,16 @@
                 <p class="cart-item-price">Price: <span>$15.00</span></p>
                 <p>
                     <span class="quantity-mobile-fix">Quantity:</span>
-                    <span class="glyphicon glyphicon-minus change-quant" onclick="changeQuantity('down', 2)"></span>
+                    <span class="glyphicon glyphicon-minus change-quant" data-how="down"></span>
                     <span id="ticket-counter2">1</span>
-                    <span class="glyphicon glyphicon-plus change-quant" onclick="changeQuantity('up', 2)"></span>
+                    <span class="glyphicon glyphicon-plus change-quant" data-how="up"></span>
                 </p>
             </div>
             <div class="col-md-3 col-xs-2 cart-item-sum vcenter">
-                <span>$</span><span id="ticket-sum-price2" price="15">15.00</span>
+                <span>$</span><span id="ticket-sum-price2" data-price="15">15.00</span>
             </div>
             <div class="col-md-1 col-xs-3 vcenter">
-                <button class="close-ticket" onclick="ticketHide(2)"><span class="glyphicon glyphicon-remove"></span></button>
+                <button class="close-ticket"><span class="glyphicon glyphicon-remove"></span></button>
             </div>
         </div>
 
@@ -53,16 +53,16 @@
                 <p class="cart-item-price">Price: <span>$6.50</span></p>
                 <p>
                     <span class="quantity-mobile-fix">Quantity:</span>
-                    <span class="glyphicon glyphicon-minus change-quant" onclick="changeQuantity('down', 3)"></span>
+                    <span class="glyphicon glyphicon-minus change-quant" data-how="down"></span>
                     <span id="ticket-counter3">1</span>
-                    <span class="glyphicon glyphicon-plus change-quant" onclick="changeQuantity('up', 3)"></span>
+                    <span class="glyphicon glyphicon-plus change-quant" data-how="up"></span>
                 </p>
             </div>
             <div class="col-md-3 col-xs-2 cart-item-sum vcenter">
-                <span>$</span><span id="ticket-sum-price3" price="6.5">6.50</span>
+                <span>$</span><span id="ticket-sum-price3" data-price="6.5">6.50</span>
             </div>
             <div class="col-md-1 col-xs-3 vcenter">
-                <button class="close-ticket" onclick="ticketHide(3)"><span class="glyphicon glyphicon-remove"></span></button>
+                <button class="close-ticket"><span class="glyphicon glyphicon-remove"></span></button>
             </div>
         </div>
 
@@ -79,6 +79,6 @@
                 <p>Total cost: $<span id="totalAmount"></span></p>
             </div>
             <div class="col-md-2 col-xs-4 cart-item-sum vcenter">
-                <button class="btn btn-default btn-lg btn-pay-now" onclick="checkDate()" data-toggle="modal" data-target="#successBuy">Buy</button>
+                <button class="btn btn-default btn-lg btn-pay-now" data-toggle="modal" data-target="#successBuy">Buy</button>
             </div>
         </div>

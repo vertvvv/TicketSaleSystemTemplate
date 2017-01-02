@@ -45,13 +45,13 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-left">
-                <li><a id="testEmpty" class="test-link" onclick="profileTest(true); return false;">test (profile)</a></li>
+                <li><a id="testEmpty" class="test-link">test (profile)</a></li>
             </ul>
             <div id="menutest">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#openModal" onclick="openLoginModal(true);" data-toggle="modal" data-target="#openModal">Log in</a></li>
+                    <li><a href="#openModal" class="login-link" data-toggle="modal" data-target="#openModal">Log in</a></li>
                     <li><a class="separator">|</a></li>
-                    <li><a href="#openModal" onclick="openLoginModal(false);" data-toggle="modal" data-target="#openModal">Sign up</a></li>
+                    <li><a href="#openModal" class="login-link" data-toggle="modal" data-target="#openModal">Sign up</a></li>
                 </ul>
             </div>
         </div>
@@ -86,11 +86,11 @@
                         <p><span>Category:</span> Kids</p>
                         <p>
                             <span>Quantity:</span>
-                            <span class="glyphicon glyphicon-minus change-quant" onclick="changeQuantity('down')"></span>
+                            <span class="glyphicon glyphicon-minus change-quant" data-how="down"></span>
                             <span id="ticket-counter"></span>
-                            <span class="glyphicon glyphicon-plus change-quant" onclick="changeQuantity('up')"></span>
+                            <span class="glyphicon glyphicon-plus change-quant" data-how="up"></span>
                         </p>
-                        <p><span>Price:</span> $<span price="10" class="price-span" id="price">10.00</span></p>
+                        <p><span>Price:</span> $<span data-price="10" class="price-span" id="price">10.00</span></p>
                     </div>
                 </div>
             </div>
@@ -111,55 +111,55 @@
 
         <div class="row" id="main">
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 no-padding">
-                <div class="box" id="attr1" onclick="changeQuantity('zero')" data-toggle="modal" data-target="#attractionModal" data-name="Ferris wheel">
+                <div class="box" id="attr1" data-how="zero" data-toggle="modal" data-target="#attractionModal" data-name="Ferris wheel">
                     <div class="box-icon"></div>
                     <div class="box-title">Ferris wheel</div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 no-padding">
-                <div class="box" id="attr2" onclick="changeQuantity('zero')" data-toggle="modal" data-target="#attractionModal" data-name="Roller-Coaster">
+                <div class="box" id="attr2" data-how="zero" data-toggle="modal" data-target="#attractionModal" data-name="Roller-Coaster">
                     <div class="box-icon"></div>
                     <div class="box-title">Roller-Coaster</div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 no-padding">
-                <div class="box" id="attr3" onclick="changeQuantity('zero')" data-toggle="modal" data-target="#attractionModal" data-name="Cordtraction">
+                <div class="box" id="attr3" data-how="zero" data-toggle="modal" data-target="#attractionModal" data-name="Cordtraction">
                     <div class="box-icon"></div>
                     <div class="box-title">Cordtraction</div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 no-padding">
-                <div class="box" id="attr4" onclick="changeQuantity('zero')" data-toggle="modal" data-target="#attractionModal" data-name="Autodrome">
+                <div class="box" id="attr4" data-how="zero" data-toggle="modal" data-target="#attractionModal" data-name="Autodrome">
                     <div class="box-icon"></div>
                     <div class="box-title">Autodrome</div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 no-padding">
-                <div class="box" id="attr5" onclick="changeQuantity('zero')" data-toggle="modal" data-target="#attractionModal" data-name="The Fifth Element">
+                <div class="box" id="attr5" data-how="zero" data-toggle="modal" data-target="#attractionModal" data-name="The Fifth Element">
                     <div class="box-icon"></div>
                     <div class="box-title">The Fifth Element</div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 no-padding">
-                <div class="box" id="attr6" onclick="changeQuantity('zero')" data-toggle="modal" data-target="#attractionModal" data-name="Catapult">
+                <div class="box" id="attr6" data-how="zero" data-toggle="modal" data-target="#attractionModal" data-name="Catapult">
                     <div class="box-icon"></div>
                     <div class="box-title">Catapult</div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 no-padding">
-                <div class="box" id="attr7" onclick="changeQuantity('zero')" data-toggle="modal" data-target="#attractionModal" data-name="Your Dvor">
+                <div class="box" id="attr7" data-how="zero" data-toggle="modal" data-target="#attractionModal" data-name="Your Dvor">
                     <div class="box-icon"></div>
                     <div class="box-title">Your Dvor</div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 no-padding">
-                <div class="box" id="attr8" onclick="changeQuantity('zero')" data-toggle="modal" data-target="#attractionModal" data-name="Wooden Warrior">
+                <div class="box" id="attr8" data-how="zero" data-toggle="modal" data-target="#attractionModal" data-name="Wooden Warrior">
                     <div class="box-icon"></div>
                     <div class="box-title">Wooden Warrior</div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 no-padding">
-                <div class="box" id="attr9" onclick="changeQuantity('zero')" data-toggle="modal" data-target="#attractionModal" data-name="Double Loop">
+                <div class="box" id="attr9" data-how="zero" data-toggle="modal" data-target="#attractionModal" data-name="Double Loop">
                     <div class="box-icon"></div>
                     <div class="box-title">Double Loop</div>
                 </div>
@@ -172,7 +172,7 @@
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/common.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
 
 </body>
 

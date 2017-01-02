@@ -65,14 +65,14 @@
                     </div>
                     <div class="form-group">
                         <div class="col-md-12">
-                            <textarea class="form-control" rows="6" placeholder="Your message..."></textarea>
+                            <textarea id="newMessage" class="form-control" rows="6" placeholder="Your message..."></textarea>
                         </div>
                     </div>
                 </form>
             </div>
 
             <div class="modal-footer">
-                <button type="button" onclick="messageSent()" class="btn btn-block btn-primary btn-footer-buy">Send message</button>
+                <button type="button" class="btn btn-block btn-primary btn-footer-buy">Send message</button>
             </div>
 
         </div>
@@ -125,7 +125,7 @@
             </div>
 
             <div class="modal-footer">
-                <button type="button" onclick="sendMessage()" class="btn btn-block btn-primary btn-footer-buy">Send message</button>
+                <button type="button" class="btn btn-block btn-primary btn-footer-buy">Send message</button>
             </div>
 
         </div>
@@ -161,7 +161,7 @@
 
         <h2 class="mobile-no-display">If you still have unanswered questions, ask our team</h2>
 
-        <h2>(<a class="test-link" onclick="questionsAdd(true); return false;">with questions</a> or <a class="test-link" onclick="questionsAdd(false); return false;">without questions</a>)</h2>
+        <h2>(<a class="test-link">with questions</a> or <a class="test-link">without questions</a>)</h2>
 
         <div id="questions">
 

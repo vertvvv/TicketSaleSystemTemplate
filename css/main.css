@@ -559,12 +559,12 @@ nav {
     width: 100%;
 }
 
-.login-form .button {
+.login-form .login-button {
     color: #ddd;
 }
 
 .login-form input,
-.login-form .button{
+.login-form .login-button{
     background: rgba(110,110,110,.1);
     border: none;
     border-radius: 25px;
@@ -580,11 +580,11 @@ nav {
     font-size: 0.75em;
 }
 
-.login-form .button{
+.login-form .login-button{
     background-color: #337ab7;
 }
 
-.login-form .button:hover{
+.login-form .login-button:hover{
     background-color: #286090;
     -webkit-transition: all .5s ease;
     -moz-transition: all .5s ease;
