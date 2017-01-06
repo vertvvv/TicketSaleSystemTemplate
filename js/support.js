@@ -11,6 +11,13 @@ $('.btn-footer-buy').on('click', function (e) {
     $(this).parent().parent().parent().parent().attr("id") == "dialogModal" ? sendMessage() : messageSent();
 });
 
+$('textarea').on('keydown', function (e) {
+    e = e || window.event;
+    if (e.keyCode == 13 && e.ctrlKey) {
+        sendMessage();
+    };
+});
+
 $('body')
     .on('click', '.test-link', function (e) {
         const questions = $('#questions');
@@ -31,18 +38,6 @@ function sendMessage() {
     const tomorrow = new Date(new Date().getTime() + 20 * 60 * 60 * 1000);
     lastMessage.after('<div class="modal-message modal-question">' +
         '<img class="img-circle message-img" src="img/identicon8.png" alt=""><p>'
-        + dialogMessage.val() + '</p><span class="message-date">'+ getFormattedTime(tomorrow) + '</span></div>');
+        + dialogMessage.val() + '</p><span class="message-date">'+ tomorrow.getFormattedTime() + '</span></div>');
     dialogMessage.val('');
-}
-
-function getFormattedTime (date) {
-    return ("0" + date.getDate()).slice(-2)
-        + "."
-        + ("0" + (date.getMonth() + 1)).slice(-2)
-        + "."
-        + date.getFullYear()
-        + ", "
-        + (date.getHours() + 4)
-        + ":"
-        + ("0" + date.getMinutes()).slice(-2);
 }

@@ -1,16 +1,8 @@
 const tomorrow = new Date(new Date().getTime() + 20 * 60 * 60 * 1000);
-const nextyeartomorrow = new Date(new Date().getTime() + 365 * 24 * 60 * 60 * 1000);
+const nextYearTomorrow = new Date(new Date().getTime() + 365 * 24 * 60 * 60 * 1000);
 const directory = "assets/cart/";
 
-function getFormattedDate (date) {
-    return date.getFullYear()
-        + "-"
-        + ("0" + (date.getMonth() + 1)).slice(-2)
-        + "-"
-        + ("0" + date.getDate()).slice(-2);
-}
-
-$("#visitDate").val(getFormattedDate(tomorrow)).attr('min', getFormattedDate(tomorrow)).attr('max', getFormattedDate(nextyeartomorrow));
+$("#visitDate").val(tomorrow.getFormattedDate()).attr('min', tomorrow.getFormattedDate()).attr('max', nextYearTomorrow.getFormattedDate());
 
 function totalAmount() {
     let totalCost = 0;
