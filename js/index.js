@@ -1,7 +1,10 @@
 const directory = "assets/index/";
 
 $('span.change-quant').on('click', changeQuantity);
-$('div.box').on('click', changeQuantity);
+$('div.box').on('click', function () {
+    changeQuantity();
+    checkMaintenance($(this));
+});
 
 $('#attractionModal').on('show.bs.modal', function (event) {
     const box = $(event.relatedTarget);
@@ -45,11 +48,18 @@ $(function () {
     });
 });
 
-function changeQuantity(e) {
+function checkMaintenance(box) {
+    const flag = !!(box.data('maintenance'));
+    const buyButton = $('.btn-footer-buy');
+    $('.maintenance-text').toggleClass('no-display', !flag);
+    buyButton.prop('disabled', flag);
+}
+
+function changeQuantity() {
     const quantity = $('#ticket-counter');
     const sumPrice = $('#price');
     let ticketCounter = parseInt(quantity.text(), 10);
-    const how = $(this).data('how');
+    const how = ($(this).data('how')) ? $(this).data('how') : '';
 
     if (how === 'down') {
         (ticketCounter > 1) ? ticketCounter -= 1 : ticketCounter = 1;

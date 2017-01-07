@@ -28,6 +28,44 @@ $('textarea').on('keydown', function (e) {
     }
 });
 
+$('#srch-term').on('change', filterUsers);
+$('#srch-term').on('keyup', filterUsers);
+$('#inlineRadio1').on('change', filterUsers);
+$('#inlineRadio2').on('change', filterUsers);
+$('#inlineCheckbox3').on('change', filterUsers);
+
+function filterUsers() {
+    const idSearch = $('#inlineRadio1').is(':checked');
+    const isBanned = $('#inlineCheckbox3').is(':checked');
+    const filter = $('#srch-term').val();
+
+    function filterString(user, str) {
+        if (!(str.includes(filter))) {
+            user.addClass('no-display');
+        }
+    }
+
+    $('.user-container').each(function () {
+        if (isBanned) {
+            let str = $(this).find('.user-status').text();
+            if (!($(this).text().includes('Banned'))) {
+                $(this).addClass('no-display');
+            } else {
+                $(this).removeClass('no-display');
+            }
+        } else {
+            $(this).removeClass('no-display');
+        }
+        if (idSearch) {
+            let str = $(this).find('.user-id').text();
+            filterString($(this), str);
+        } else {
+            let str = $(this).find('.user-name').text().toLowerCase();
+            filterString($(this), str);
+        }
+    })
+}
+
 function sendMessage() {
     const lastMessage = $('.modal-message:last');
     const dialogMessage = $('#dialogMessage');

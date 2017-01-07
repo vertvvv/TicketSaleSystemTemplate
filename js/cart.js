@@ -15,25 +15,27 @@ function totalAmount() {
         }
     }
     if (totalCost == 0) {
-        cartEmpty(true);
+        cartEmpty(false);
     } else {
         $("#totalAmount").text(totalCost);
     }
 }
 
+function cartEmpty() {
+    const main = $('#display');
+    const testText = "with tickets";
+    if (this.text == testText) {
+        main.load(directory + "cart_full.html");
+        setTimeout(() => loadInfo(),50);
+        this.text = "when empty";
+    } else {
+        main.load(directory + "cart_empty.html");
+        this.text = testText;
+    }
+}
+
 $('body')
-    .on('click', '#testEmpty', function (e) {
-        const main = $('#display');
-        const testText = "when empty";
-        if (this.text == testText) {
-            main.load(directory + "cart_empty.html");
-            this.text = "with tickets";
-        } else {
-            main.load(directory + "cart_full.html");
-            this.text = testText;
-            setTimeout(function() {loadInfo()},50);
-        }
-    })
+    .on('click', '#testEmpty', cartEmpty)
 
     .on('click', '.close-ticket', function (e) {
         const item = $(this).parent().parent().attr('id').substr(6);

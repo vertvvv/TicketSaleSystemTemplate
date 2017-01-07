@@ -71,6 +71,10 @@ button:focus {
     outline: none !important;
 }
 
+button:disabled {
+    cursor: not-allowed;
+    pointer-events: all !important;
+}
 /*Reset end*/
 
 html {
@@ -154,6 +158,10 @@ body {
         transform: translateX(300px);
         opacity: 0;
     }
+}
+
+.no-display {
+    display: none;
 }
 
 .no-padding {
@@ -1517,20 +1525,28 @@ textarea {
 .user-container {
     background-color: #fefefe;
     border-radius: 10px;
-    padding: 20px;
-    margin-top: 1%;
+    padding: 5px;
+    margin-top: 5px;
 }
 
 .user-container:first-of-type {
     margin-top: 3%;
 }
 
+.user-container-search {
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 2%;
+}
+
+.user-container-search>.checkbox-inline,
+.user-container-search>.radio-inline{
+    margin-top: 1.5%;
+    margin-bottom: 1.25%;
+    margin-right: 5%;
+}
+
 .img-thumbnail-small {
     width: 50px;
     height: 50px;
-}
-
-.user-questions a {
-    cursor: pointer;
-    line-height: 26px;
 }
