@@ -13,31 +13,18 @@ $('.ban-button').on('click', function () {
     }
 });
 
-$('#dialogModal').on('show.bs.modal', function (event) {
-    const item = $(event.relatedTarget);
-    const name = item.text();
-    const modal = $(this);
-    modal.find('.modal-title').text(name);
-});
-
-$('.btn-footer-buy').on('click', sendMessage);
-$('textarea').on('keydown', function (e) {
-    e = e || window.event;
-    if (e.keyCode == 13 && e.ctrlKey) {
-        sendMessage();
-    }
-});
-
 $('#srch-term').on('change', filterUsers);
 $('#srch-term').on('keyup', filterUsers);
 $('#inlineRadio1').on('change', filterUsers);
 $('#inlineRadio2').on('change', filterUsers);
-$('#inlineCheckbox3').on('change', filterUsers);
+$('#inlineRadio3').on('change', filterUsers);
+$('#inlineCheckbox4').on('change', filterUsers);
 
 function filterUsers() {
     const idSearch = $('#inlineRadio1').is(':checked');
-    const isBanned = $('#inlineCheckbox3').is(':checked');
-    const filter = $('#srch-term').val();
+    const loginSearch = $('#inlineRadio2').is(':checked');
+    const isBanned = $('#inlineCheckbox4').is(':checked');
+    const filter = $('#srch-term').val().toLowerCase();
 
     function filterString(user, str) {
         if (!(str.includes(filter))) {
@@ -48,32 +35,15 @@ function filterUsers() {
     $('.user-container').each(function () {
         if (isBanned) {
             let str = $(this).find('.user-status').text();
-            if (!($(this).text().includes('Banned'))) {
-                $(this).addClass('no-display');
-            } else {
-                $(this).removeClass('no-display');
-            }
+            $(this).toggleClass('no-display', !(str.includes('Banned')));
         } else {
             $(this).removeClass('no-display');
         }
-        if (idSearch) {
-            let str = $(this).find('.user-id').text();
-            filterString($(this), str);
-        } else {
-            let str = $(this).find('.user-name').text().toLowerCase();
-            filterString($(this), str);
-        }
+        let str = (idSearch) ? $(this).find('.user-id').text() :
+            (loginSearch) ? $(this).find('.user-login').text().toLowerCase() :
+                $(this).find('.user-name').text().toLowerCase();
+        filterString($(this), str);
     })
-}
-
-function sendMessage() {
-    const lastMessage = $('.modal-message:last');
-    const dialogMessage = $('#dialogMessage');
-    const tomorrow = new Date(new Date().getTime() + 20 * 60 * 60 * 1000);
-    lastMessage.after('<div class="modal-message modal-question">' +
-        '<img class="img-circle message-img" src="img/identicon6.png" alt=""><p>'
-        + dialogMessage.val() + '</p><span class="message-date">'+ tomorrow.getFormattedTime() + '</span></div>');
-    dialogMessage.val('');
 }
 
 function randomID () {
@@ -87,5 +57,8 @@ function randomPartID(multiply) {
 $(function () {
     $('.user-id').each(function() {
         $(this).text('ID: ' + randomID());
+    });
+    $('.attr-id').each(function() {
+        $(this).attr('placeholder', randomID());
     });
 });

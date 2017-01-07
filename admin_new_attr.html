@@ -4,7 +4,7 @@
 
 <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-<title>Orders - Ticket Sale System</title>
+<title>Attractions - Ticket Sale System</title>
 
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -56,6 +56,218 @@
 
         <h1>Attractions</h1>
 
+        <div class="panel-group attr-container" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            New Attraction
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="inputNameNew" class="col-md-3 col-xs-3 control-label">Name</label>
+                                <div class="col-md-7 col-xs-9">
+                                    <input class="form-control" id="inputNameNew" placeholder="Name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-3 control-label">Description</label>
+                                <div class="col-md-7 col-xs-9">
+                                    <textarea class="form-control" id="inputDescriptionNew" rows="3" placeholder="Description"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputNameNew" class="col-md-3 col-xs-3 control-label">Category</label>
+                                <div class="col-md-7 col-xs-9">
+                                    <select class="form-control" id="inputCategoryNew">
+                                        <option>Kids</option>
+                                        <option>Extreme</option>
+                                        <option>Hyper extreme</option>
+                                        <option>Over hyper extreme</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-3 control-label">Price, $</label>
+                                <div class="col-md-7 col-xs-9">
+                                    <input type="number" class="form-control" id="inputPriceNew" placeholder="Price">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-3 control-label">Maintenance</label>
+                                <div class="col-md-7 col-xs-9 text-left">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inputRadioNew" value="option1" checked> On maintenance
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inputRadioNew" value="option2"> Already works
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-3 control-label">Image</label>
+                                <div class="col-md-7 col-xs-9 image-input">
+                                    <input type="file" id="inputFileNew">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-offset-3 col-md-7 col-xs-12">
+                                    <button type="submit" class="btn btn-block btn-primary">Add</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                    <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Ferris Wheel
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div class="panel-body">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-3 control-label">ID</label>
+                                <div class="col-md-7 col-xs-9">
+                                    <input class="form-control attr-id" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-3 control-label">Name</label>
+                                <div class="col-md-7 col-xs-9">
+                                    <input class="form-control" placeholder="Ferris Wheel">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-3 control-label">Description</label>
+                                <div class="col-md-7 col-xs-9">
+                                    <textarea class="form-control" rows="3" placeholder="Description">Best attraction ever blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah</textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputNameNew" class="col-md-3 col-xs-3 control-label">Category</label>
+                                <div class="col-md-7 col-xs-9">
+                                    <select class="form-control">
+                                        <option>Kids</option>
+                                        <option>Extreme</option>
+                                        <option>Hyper extreme</option>
+                                        <option>Over hyper extreme</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-3 control-label">Price, $</label>
+                                <div class="col-md-7 col-xs-9">
+                                    <input type="number" class="form-control" placeholder="Price" value="10">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-3 control-label">Maintenance</label>
+                                <div class="col-md-7 col-xs-9 text-left">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inputRadio2" value="option1"> On maintenance
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inputRadio2" value="option2" checked> Already works
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-3 control-label">New image</label>
+                                <div class="col-md-7 col-xs-9 image-input">
+                                    <input type="file">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-offset-3 col-md-7 col-xs-12">
+                                    <button type="submit" class="btn btn-block btn-primary">Change</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingThree">
+                    <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Roller-Coaster
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                    <div class="panel-body">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-3 control-label">ID</label>
+                                <div class="col-md-7 col-xs-9">
+                                    <input class="form-control attr-id" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-3 control-label">Name</label>
+                                <div class="col-md-7 col-xs-9">
+                                    <input class="form-control" placeholder="Roller-Coaster">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-3 control-label">Description</label>
+                                <div class="col-md-7 col-xs-9">
+                                    <textarea class="form-control" rows="3" placeholder="Description">Best attraction ever blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah blah-blah-blah</textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputNameNew" class="col-md-3 col-xs-3 control-label">Category</label>
+                                <div class="col-md-7 col-xs-9">
+                                    <select class="form-control">
+                                        <option>Kids</option>
+                                        <option>Extreme</option>
+                                        <option>Hyper extreme</option>
+                                        <option>Over hyper extreme</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-3 control-label">Price, $</label>
+                                <div class="col-md-7 col-xs-9">
+                                    <input type="number" class="form-control" placeholder="Price" value="10">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-3 control-label">Maintenance</label>
+                                <div class="col-md-7 col-xs-9 text-left">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inputRadio3" value="option1" checked> On maintenance
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inputRadio3" value="option2"> Already works
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-3 control-label">New image</label>
+                                <div class="col-md-7 col-xs-9 image-input">
+                                    <input type="file">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-offset-3 col-md-7 col-xs-12">
+                                    <button type="submit" class="btn btn-block btn-primary">Change</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -66,7 +278,7 @@
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.printElement.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/admin.js"></script>
 <script type="text/javascript" src="js/orders.js"></script>
 
 </body>

@@ -212,7 +212,7 @@ body {
 .cart-main h1,
 .support-main h1{
     font-size: 1.8em;
-    padding-top: 3%;
+    padding-top: 2%;
 }
 
 .main-container h2 {
@@ -227,10 +227,9 @@ body {
     .orders-main h1,
     .cart-main h1,
     .support-main h1{
-        padding-top: 5%;
+        padding-top: 3%;
     }
     .settings-main h1,
-    .orders-main h1,
     .cart-main h1,
     .support-main h1{
         padding-bottom: 3%;
@@ -775,7 +774,7 @@ nav {
     border: 1px solid rgb(210,210,210);
     border-radius: 10px;
     padding: 2% 2% 2% 1%;
-    margin: 2vw 0 0 0;
+    margin: 1.5vw 0 0 0;
 }
 
 @media (max-width: 767px) {
@@ -820,7 +819,7 @@ nav {
     border-radius: 10px;
     font-weight: 300;
     padding: 5% 8% 5% 8%;
-    margin: 2vw 0 0 0;
+    margin: 1.5vw 0 0 0;
 }
 
 @media (max-width: 991px) {
@@ -1140,7 +1139,7 @@ button.print-button:hover .print-icon::after {
 }
 
 .cart-main h1 {
-    padding-bottom: 1%;
+    padding-bottom: 0;
 }
 
 .cart-main h2 {
@@ -1172,11 +1171,11 @@ button.print-button:hover .print-icon::after {
     .cart-item {
         width: 80%;
         margin: auto;
-        margin-top: 1vw;
+        margin-top: 1.5vw;
     }
 
     .cart-item:first-of-type {
-        margin-top: 2vw;
+        margin-top: 1.5vw;
     }
 }
 
@@ -1346,7 +1345,7 @@ button.print-button:hover .print-icon::after {
 }
 
 .support-main h1 {
-    padding-bottom: 2%;
+    padding-bottom: 1%;
 }
 
 .support-main h2 {
@@ -1356,11 +1355,11 @@ button.print-button:hover .print-icon::after {
 .common-questions {
     width: 90%;
     margin: 0 auto;
-    margin-top: 2.5%;
+    margin-top: 2%;
     text-align: left;
     font-size: 1em;
     padding: 5%;
-    padding-top: 3%;
+    padding-top: 2%;
     padding-bottom: 3%;
     border-radius: 30px;
     background-color: #f8f8f8;
@@ -1549,4 +1548,23 @@ textarea {
 .img-thumbnail-small {
     width: 50px;
     height: 50px;
+}
+
+.attr-container {
+    margin-top: 3%;
+    word-wrap: break-word;
+}
+
+.image-input {
+    margin-top: 5px;
+}
+
+.panel-heading {
+    padding: 0;
+}
+
+.panel-heading a {
+    display: inline-block;
+    padding: 10px 15px;
+    width: 100%;
 }
