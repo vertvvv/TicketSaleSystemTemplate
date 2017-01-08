@@ -177,9 +177,9 @@ body {
 }
 
 .test-span {
-    padding: 3px 20px;
-    margin-bottom: 10px;
+    padding: 4px 20px;
     cursor: crosshair;
+    line-height: 1.42857143;
 }
 
 .main-container {
@@ -404,7 +404,8 @@ nav {
     margin-top: 3%;
 }
 
-.btn-footer-buy {
+.btn-footer-buy,
+.btn-ft-modal{
     width: 100%;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -1417,6 +1418,12 @@ button.print-button:hover .print-icon::after {
     }
 }
 
+@media (max-width: 991px) {
+    .tablet-no-display {
+        display: none;
+    }
+}
+
 .questions {
     width: 90%;
     margin: 0 auto;
@@ -1592,4 +1599,14 @@ textarea {
     .panel-group label {
         margin-top: 7px;
     }
+}
+
+.new-category span,
+.delete-category span{
+    line-height: 20px;
+}
+
+.new-category button,
+.delete-category button {
+    padding: 6px 0;
 }

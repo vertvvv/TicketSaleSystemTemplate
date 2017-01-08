@@ -13,6 +13,36 @@ $('.ban-button').on('click', function () {
     }
 });
 
+$('#maintenanceModal').on('show.bs.modal', function (event) {
+    const item = $(event.relatedTarget).parent().parent().parent().parent().find('div:first-of-type').find('.attr-id');
+    const name = (item.length) ? item.attr('placeholder') : 'New attraction';
+    const modal = $(this);
+    modal.find('.attr-id-rdy').attr('placeholder', name);
+});
+
+$('#addCategory').on('click', function () {
+    const selects = $('select');
+    const category = $('#newCategoryName').val();
+    console.log(category);
+    selects.each(function (item) {
+        $(this).find('option:last-of-type').after('<option>'+category+'</option>');
+    });
+});
+
+$('#removeCategory').on('click', function() {
+    const currentOption = $(this).parent().parent().find('select').find('option:checked');
+    const optionText = currentOption.text();
+    const selects = $('select');
+    selects.each(function (item) {
+        const options = $(this).find('option');
+        options.each(function (option) {
+            if ($(this).text() == optionText) {
+                $(this).remove();
+            }
+        });
+    });
+});
+
 $('#srch-term').on('change', filterUsers);
 $('#srch-term').on('keyup', filterUsers);
 $('#inlineRadio1').on('change', filterUsers);
