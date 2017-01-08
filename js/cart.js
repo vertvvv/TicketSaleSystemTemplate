@@ -37,7 +37,7 @@ function cartEmpty() {
 $('body')
     .on('click', '#testEmpty', cartEmpty)
 
-    .on('click', '.close-ticket', function (e) {
+    .on('click', '.close-ticket', function () {
         const item = $(this).parent().parent().attr('id').substr(6);
         const ticket = $('#ticket' + item);
         ticket.addClass('nonvisible-ticket');
@@ -47,13 +47,13 @@ $('body')
         });
     })
 
-    .on('click', '.btn-pay-now', function (e) {
+    .on('click', '.btn-pay-now', () => {
         let thisdate = new Date($("#visitDate").val());
         $("#completeDate").text(thisdate.toLocaleDateString());
         $("#completeCost").text($("#totalAmount").text());
     })
 
-    .on('click', '.change-quant', function (e) {
+    .on('click', '.change-quant', function () {
         const item = $(this).parent().parent().parent().attr('id').substr(6);
         const quantity = $('#ticket-counter' + item);
         const sumPrice = $('#ticket-sum-price' + item);

@@ -11,11 +11,11 @@ $('.btn-footer-buy').on('click', function (e) {
     $(this).parent().parent().parent().parent().attr("id") == "dialogModal" ? sendMessage() : messageSent();
 });
 
-$('textarea').on('keydown', function (e) {
+$('#dialogMessage').on('keydown', (e) => {
     e = e || window.event;
     if (e.keyCode == 13 && e.ctrlKey) {
         sendMessage();
-    };
+    }
 });
 
 $('body')
@@ -29,7 +29,7 @@ function messageSent() {
     const modalBody = $('#modalBody');
     modalBody.load(directory + "support_success_message.html");
     modalBody.siblings('.modal-footer').remove();
-    setTimeout(function() {window.location = 'support.html'}, 1500);
+    setTimeout(() => {window.location = 'support.html'}, 1500);
 }
 
 function sendMessage() {

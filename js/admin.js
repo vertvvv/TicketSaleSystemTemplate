@@ -13,6 +13,11 @@ $('.ban-button').on('click', function () {
     }
 });
 
+$('.admin-close-question').on('click', function () {
+    let btn = $(this);
+    btn.parent().parent().remove();
+});
+
 $('#maintenanceModal').on('show.bs.modal', function (event) {
     const item = $(event.relatedTarget).parent().parent().parent().parent().find('div:first-of-type').find('.attr-id');
     const name = (item.length) ? item.attr('placeholder') : 'New attraction';
@@ -20,7 +25,7 @@ $('#maintenanceModal').on('show.bs.modal', function (event) {
     modal.find('.attr-id-rdy').attr('placeholder', name);
 });
 
-$('#addCategory').on('click', function () {
+$('#addCategory').on('click', () => {
     const selects = $('select');
     const category = $('#newCategoryName').val();
     console.log(category);
@@ -42,6 +47,22 @@ $('#removeCategory').on('click', function() {
         });
     });
 });
+
+$('#dialogModal').on('show.bs.modal', function (event) {
+    const item = $(event.relatedTarget);
+    const name = item.text();
+    const modal = $(this);
+    modal.find('.modal-title').text(name);
+});
+
+$('#dialogModal').find('textarea').on('keydown', (e) => {
+    e = e || window.event;
+    if (e.keyCode == 13 && e.ctrlKey) {
+        sendMessage();
+    }
+});;
+
+$('.btn-footer-buy').on('click', sendMessage);
 
 $('#srch-term').on('change', filterUsers);
 $('#srch-term').on('keyup', filterUsers);
@@ -82,6 +103,16 @@ function randomID () {
 
 function randomPartID(multiply) {
     return Math.floor(Math.random() * (Math.pow(10, multiply) - 9*multiply + 1) + 9*multiply);
+}
+
+function sendMessage() {
+    const lastMessage = $('.modal-message:last');
+    const dialogMessage = $('#dialogMessage');
+    const tomorrow = new Date(new Date().getTime() + 20 * 60 * 60 * 1000);
+    lastMessage.after('<div class="modal-message modal-question">' +
+        '<img class="img-circle message-img" src="img/identicon6.png" alt=""><p>'
+        + dialogMessage.val() + '</p><span class="message-date">'+ tomorrow.getFormattedTime() + '</span></div>');
+    dialogMessage.val('');
 }
 
 $(function () {

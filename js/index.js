@@ -18,19 +18,19 @@ $('#attractionModal').on('show.bs.modal', function (event) {
 });
 
 $('body')
-    .on('click', 'a.login-link', function (e) {
+    .on('click', 'a.login-link', function () {
     const modalBody = $('#loginBody');
     const loginText = "Log in";
     this.text == loginText ? modalBody.load(directory + "login.html") : modalBody.load(directory + "signup.html");
     })
 
-    .on('click', 'a.forgot-link', function(e) {
+    .on('click', 'a.forgot-link', function () {
         const modalBody = $('#loginBody');
         const forgotText = "Forgot Password?";
         this.text == forgotText ? modalBody.load(directory + "login_forgot_password.html") : modalBody.load(directory + "login.html");
     })
 
-    .on('click', '#testEmpty', function (e) {
+    .on('click', '#testEmpty', function () {
     const menu = $('#menutest');
     const testText = "test (profile)";
     if (this.text == testText) {
@@ -43,7 +43,7 @@ $('body')
     });
 
 $(function () {
-    $('.box').each(function() {
+    $('.box').each(function () {
         $(this).find('.box-icon').css('background-image', 'url(img/attr' + this.id.substr(4) + '.png)');
     });
 });

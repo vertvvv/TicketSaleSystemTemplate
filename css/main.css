@@ -1218,10 +1218,15 @@ button.print-button:hover .print-icon::after {
     height: 40px;
     font-size: 16px;
     font-weight: 900;
-    margin-left: 45%;
     border: 3px solid black;
     border-radius: 50%;
     background-color: inherit;
+}
+
+@media (max-width: 992px) {
+    .close-ticket {
+        margin-left: 45%;
+    }
 }
 
 .close-ticket:hover {
@@ -1567,6 +1572,11 @@ textarea {
     word-wrap: break-word;
 }
 
+.user-ban {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 .ban-button {
     padding: 5px 0;
 }
@@ -1609,4 +1619,23 @@ textarea {
 .new-category button,
 .delete-category button {
     padding: 6px 0;
+}
+
+.admin-question-container {
+    background-color: #fefefe;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 0 auto;
+    margin-top: 5px;
+    width: 80%;
+}
+
+.admin-question-container>div>a {
+    cursor: pointer;
+}
+
+@media (max-width: 991px) {
+    .admin-question-container>div {
+        margin-bottom: 10px;
+    }
 }
