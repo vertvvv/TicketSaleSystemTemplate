@@ -1290,15 +1290,12 @@ button.print-button:hover .print-icon::after {
 .cart-amount-total,
 .cart-amount-date{
     font-size: 16px;
+    line-height: 34px;
+    padding: 0 20px;
 }
 
-@media (min-width: 992px) {
-    .cart-amount-total {
-        text-align: right;
-    }
-    .cart-amount-date {
-        padding-left: 7%;
-    }
+.cart-amount-total {
+    text-align: right;
 }
 
 .amount-label {

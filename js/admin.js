@@ -48,17 +48,20 @@ $('#removeCategory').on('click', function() {
     });
 });
 
-$('#dialogModal').on('show.bs.modal', function (event) {
+$('#dialogModal')
+    .on('show.bs.modal', function (event) {
     const item = $(event.relatedTarget);
     const name = item.text();
     const modal = $(this);
     modal.find('.modal-title').text(name);
-});
+})
+    .on('keydown', sendOnCtrl);
 
-$('#dialogModal').on('keydown', sendOnCtrl);
+$('#srch-term')
+    .on('change', filterUsers)
+    .on('keyup', filterUsers);
+
 $('.btn-ft-modal').on('click', () => checkIfEmpty($('#dialogMessage')));
-$('#srch-term').on('change', filterUsers);
-$('#srch-term').on('keyup', filterUsers);
 $('#inlineRadio1').on('change', filterUsers);
 $('#inlineRadio2').on('change', filterUsers);
 $('#inlineRadio3').on('change', filterUsers);
