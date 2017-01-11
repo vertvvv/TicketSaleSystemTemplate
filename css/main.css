@@ -172,6 +172,11 @@ body {
     cursor: pointer;
 }
 
+.font-medium-bold {
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
 .font-light {
     font-weight: 300;
 }
@@ -262,6 +267,8 @@ nav {
         display: block !important;
     }
 }
+
+
 
 .brand-link{
     text-transform: uppercase;
@@ -458,6 +465,23 @@ nav {
     -moz-transition: 0.5s;
     -o-transition: 0.5s;
     transition: 0.5s;
+}
+
+#emailForgot {
+    margin-top: 25px;
+}
+
+.check-email-text {
+    margin-top: 150px;
+    line-height: 25px !important;
+}
+
+.incorrect-email-text {
+    padding-top: 32px;
+}
+
+.incorrect-pass-confirm {
+    padding-top: 118px;
 }
 
 .login-form h1 {
@@ -1164,24 +1188,25 @@ button.print-button:hover .print-icon::after {
     font-weight: 600;
     border: 1px solid rgb(210,210,210);
     border-radius: 10px;
-    padding: 2% 2% 2% 2%;
-    margin: 2vw 0 0 0;
+    padding: 1% 2% 1% 0;
+    margin: 1.7vw 0 0 0;
 }
 
 @media (min-width: 992px) {
     .cart-item {
         width: 80%;
+        padding-right: 0;
         margin: auto;
-        margin-top: 1.5vw;
+        margin-top: 1vw;
     }
 
     .cart-item:first-of-type {
-        margin-top: 1.5vw;
+        margin-top: 1.7vw;
     }
 }
 
 .cart-item-info p {
-    margin-bottom: 1.5em;
+    margin-bottom: 1em;
 }
 
 .cart-item-info p:last-of-type {
@@ -1197,13 +1222,19 @@ button.print-button:hover .print-icon::after {
     text-align: right;
 }
 
+@media (max-width: 991px) {
+    .cart-item-sum {
+        text-align: center;
+    }
+}
+
 .cart-item-img {
     text-align: center;
 }
 
 .attr-img {
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
     border-radius: 75px;
 }
 
@@ -1280,6 +1311,11 @@ button.print-button:hover .print-icon::after {
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
     transition: all 0.5s;
+    margin-top: 10px;
+}
+
+.cart-amount {
+    line-height: 20px;
 }
 
 @media (max-width: 767px) {

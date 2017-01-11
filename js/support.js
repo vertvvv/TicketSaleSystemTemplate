@@ -7,16 +7,14 @@ $('#dialogModal').on('show.bs.modal', function (event) {
     modal.find('.modal-title').text(name);
 });
 
-$('.btn-footer-buy').on('click', function (e) {
-    $(this).parent().parent().parent().parent().attr("id") == "dialogModal" ? sendMessage() : messageSent();
+$('.btn-ft-modal').on('click', function (e) {
+    const modalWindow = $(this).parent().parent().parent().parent();
+    modalWindow.attr("id") == "dialogModal" ? checkIfEmpty($('#dialogMessage'))
+                                            : checkIfEmpty($('#newMessage'));
 });
 
-$('#dialogMessage').on('keydown', (e) => {
-    e = e || window.event;
-    if (e.keyCode == 13 && e.ctrlKey) {
-        sendMessage();
-    }
-});
+$('#dialogMessage').on('keydown', sendOnCtrl);
+$('#newMessage').on('keydown', sendOnCtrl);
 
 $('body')
     .on('click', '.test-link', function (e) {
@@ -38,6 +36,6 @@ function sendMessage() {
     const tomorrow = new Date(new Date().getTime() + 20 * 60 * 60 * 1000);
     lastMessage.after('<div class="modal-message modal-question">' +
         '<img class="img-circle message-img" src="img/identicon8.png" alt=""><p>'
-        + dialogMessage.val() + '</p><span class="message-date">'+ tomorrow.getFormattedTime() + '</span></div>');
+        + formattedMessage(dialogMessage.val()) + '</p><span class="message-date">'+ tomorrow.getFormattedTime() + '</span></div>');
     dialogMessage.val('');
 }

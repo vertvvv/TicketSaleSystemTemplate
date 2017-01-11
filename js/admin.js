@@ -55,15 +55,8 @@ $('#dialogModal').on('show.bs.modal', function (event) {
     modal.find('.modal-title').text(name);
 });
 
-$('#dialogModal').find('textarea').on('keydown', (e) => {
-    e = e || window.event;
-    if (e.keyCode == 13 && e.ctrlKey) {
-        sendMessage();
-    }
-});;
-
-$('.btn-footer-buy').on('click', sendMessage);
-
+$('#dialogModal').on('keydown', sendOnCtrl);
+$('.btn-ft-modal').on('click', () => checkIfEmpty($('#dialogMessage')));
 $('#srch-term').on('change', filterUsers);
 $('#srch-term').on('keyup', filterUsers);
 $('#inlineRadio1').on('change', filterUsers);
@@ -111,7 +104,7 @@ function sendMessage() {
     const tomorrow = new Date(new Date().getTime() + 20 * 60 * 60 * 1000);
     lastMessage.after('<div class="modal-message modal-question">' +
         '<img class="img-circle message-img" src="img/identicon6.png" alt=""><p>'
-        + dialogMessage.val() + '</p><span class="message-date">'+ tomorrow.getFormattedTime() + '</span></div>');
+        + formattedMessage(dialogMessage.val()) + '</p><span class="message-date">'+ tomorrow.getFormattedTime() + '</span></div>');
     dialogMessage.val('');
 }
 
