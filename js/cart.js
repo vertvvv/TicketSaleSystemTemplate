@@ -2,23 +2,26 @@ const tomorrow = new Date(new Date().getTime() + 20 * 60 * 60 * 1000);
 const nextYearTomorrow = new Date(new Date().getTime() + 365 * 24 * 60 * 60 * 1000);
 const directory = "assets/cart/";
 
-$("#visitDate").val(tomorrow.getFormattedDate()).attr('min', tomorrow.getFormattedDate()).attr('max', nextYearTomorrow.getFormattedDate());
+$("#visitDate")
+    .val(tomorrow.getFormattedDate())
+    .attr('min', tomorrow.getFormattedDate())
+    .attr('max', nextYearTomorrow.getFormattedDate());
 
 function totalAmount() {
     let totalCost = 0;
-    for (let i = 1; i < 4; i++) {
-        const ticket = $('#ticket-sum-price' + i);
-        const parentDiv = ticket.parent().parent();
-        const ticketPrice = ticket.text();
-        if (!(parentDiv.hasClass('hidden-ticket'))) {
-            totalCost += parseFloat(ticketPrice);
-        }
-    }
+    $('.cart-item').each(function() {
+       const ticket = $(this).find('[data-price]');
+       const ticketPrice = ticket.text();
+       if (!($(this).hasClass('hidden-ticket'))) {
+           totalCost += parseFloat(ticketPrice);
+       }
+    });
     if (totalCost == 0) {
         cartEmpty(false);
     } else {
-        $("#totalAmount").text(totalCost);
+        $("#totalAmount").text(totalCost.toFixed(2));
     }
+    checkMenuSum();
 }
 
 function cartEmpty() {
@@ -31,6 +34,7 @@ function cartEmpty() {
     } else {
         main.load(directory + "cart_empty.html");
         this.text = testText;
+        setTimeout(() => checkMenuSum(), 200);
     }
 }
 
@@ -42,7 +46,9 @@ $('body')
         const ticket = $('#ticket' + item);
         ticket.addClass('nonvisible-ticket');
         ticket.delay(1000).queue(function() {
-            $(this).removeClass('nonvisible-ticket').addClass('hidden-ticket');
+            $(this)
+                .removeClass('nonvisible-ticket')
+                .addClass('hidden-ticket');
             totalAmount();
         });
     })
@@ -51,13 +57,16 @@ $('body')
         let thisdate = new Date($("#visitDate").val());
         $("#completeDate").text(thisdate.toLocaleDateString());
         $("#completeCost").text($("#totalAmount").text());
+        saySomething();
     })
 
     .on('click', '.change-quant', function () {
-        const item = $(this).parent().parent().parent().attr('id').substr(6);
-        const quantity = $('#ticket-counter' + item);
-        const sumPrice = $('#ticket-sum-price' + item);
+        const ticketBody = $(this).parent().parent().parent();
+        const item = ticketBody.attr('id').substr(6);
+        const quantity = ticketBody.find('.ticket-counter');
+        const sumPrice = ticketBody.find('[data-price]');
         let ticketCounter = parseInt(quantity.text(), 10);
+        console.log(ticketBody);
         const how = $(this).data('how');
 
         if (how === 'down') {
@@ -73,9 +82,26 @@ $('body')
 
 $(loadInfo());
 
+function checkMenuSum() {
+    let result = $('.ticket-counter').toArray()
+        .reduce((sum, cur) => sum + parseInt(cur.textContent), 0);
+    $('.menu-span').text(result);
+}
+
 function loadInfo() {
     $('.cart-item').each(function() {
         $(this).find('.attr-img').attr('src', 'img/attr' + this.id.substr(6) + '.png');
     });
     totalAmount();
+}
+
+function saySomething(text = $('.modal-body p').text(), lang = 'en-US') {
+    speechSynthesis.cancel();
+    const msg = new SpeechSynthesisUtterance();
+    msg.text = text;
+    msg.lang = lang;
+    msg.volume = 0.4;
+    msg.pitch = 0.4;
+    msg.rate = 1.1;
+    speechSynthesis.speak(msg);
 }

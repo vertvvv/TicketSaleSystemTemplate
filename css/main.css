@@ -168,6 +168,11 @@ body {
     padding: 0;
 }
 
+.inline-block-fix {
+    display: inline-block !important;
+    padding-right: 10px !important;
+}
+
 .test-link {
     cursor: pointer;
 }
@@ -268,7 +273,15 @@ nav {
     }
 }
 
-
+.menu-span {
+    display: inline-block;
+    padding: 3px 7px;
+    margin-left: 10px;
+    background-color: #2aabd2;
+    color: white;
+    border-radius: 50%;
+    line-height: 1.3;
+}
 
 .brand-link{
     text-transform: uppercase;
@@ -409,6 +422,14 @@ nav {
 
 .modal-body p:first-child {
     margin-top: 3%;
+}
+
+.image-transition {
+    opacity: 0.8;
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    z-index: 1050;
 }
 
 .btn-footer-buy,
@@ -1177,7 +1198,8 @@ button.print-button:hover .print-icon::after {
     cursor: pointer;
 }
 
-.cart-item {
+.cart-item,
+.cart-amount {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -1193,7 +1215,8 @@ button.print-button:hover .print-icon::after {
 }
 
 @media (min-width: 992px) {
-    .cart-item {
+    .cart-item,
+    .cart-amount {
         width: 80%;
         padding-right: 0;
         margin: auto;

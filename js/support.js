@@ -34,8 +34,10 @@ function sendMessage() {
     const lastMessage = $('.modal-message:last');
     const dialogMessage = $('#dialogMessage');
     const tomorrow = new Date(new Date().getTime() + 20 * 60 * 60 * 1000);
-    lastMessage.after('<div class="modal-message modal-question">' +
-        '<img class="img-circle message-img" src="img/identicon8.png" alt=""><p>'
-        + formattedMessage(dialogMessage.val()) + '</p><span class="message-date">'+ tomorrow.getFormattedTime() + '</span></div>');
+    lastMessage.after('<div class="modal-message modal-question">'
+        + '<img class="img-circle message-img" src="img/identicon8.png" alt="">'
+        + '<p>' + formattedMessage(dialogMessage.val()) + '</p>'
+        + '<span class="message-date">' + tomorrow.getFormattedTime() + '</span>'
+        + '</div>');
     dialogMessage.val('');
 }

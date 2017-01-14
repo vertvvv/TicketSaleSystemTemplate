@@ -1,28 +1,27 @@
 $('.ban-button').on('click', function () {
-    let btn = $(this);
-    if (btn.text() == 'Ban') {
-        btn.text('Unban');
-        btn.removeClass('btn-danger');
-        btn.addClass('btn-default');
-        btn.parent().siblings('.user-status').text('Banned');
+    if ($(this).text() == 'Ban') {
+        $(this).text('Unban')
+            .removeClass('btn-danger')
+            .addClass('btn-default')
+            .parent().siblings('.user-status').text('Banned');
     } else {
-        btn.text('Ban');
-        btn.removeClass('btn-default');
-        btn.addClass('btn-danger');
-        btn.parent().siblings('.user-status').text('Active');
+        $(this).text('Ban')
+            .removeClass('btn-default')
+            .addClass('btn-danger')
+            .parent().siblings('.user-status').text('Active');
     }
 });
 
 $('.admin-close-question').on('click', function () {
-    let btn = $(this);
-    btn.parent().parent().remove();
+    $(this).parent().parent().remove();
 });
 
 $('#maintenanceModal').on('show.bs.modal', function (event) {
-    const item = $(event.relatedTarget).parent().parent().parent().parent().find('div:first-of-type').find('.attr-id');
+    const item = $(event.relatedTarget)
+        .parent().parent().parent().parent()
+        .find('div:first-of-type').find('.attr-id');
     const name = (item.length) ? item.attr('placeholder') : 'New attraction';
-    const modal = $(this);
-    modal.find('.attr-id-rdy').attr('placeholder', name);
+    $(this).find('.attr-id-rdy').attr('placeholder', name);
 });
 
 $('#addCategory').on('click', () => {
@@ -30,12 +29,16 @@ $('#addCategory').on('click', () => {
     const category = $('#newCategoryName').val();
     console.log(category);
     selects.each(function (item) {
-        $(this).find('option:last-of-type').after('<option>'+category+'</option>');
+        $(this)
+            .find('option:last-of-type')
+            .after('<option>'+category+'</option>');
     });
 });
 
 $('#removeCategory').on('click', function() {
-    const currentOption = $(this).parent().parent().find('select').find('option:checked');
+    const currentOption = $(this)
+        .parent().parent()
+        .find('select').find('option:checked');
     const optionText = currentOption.text();
     const selects = $('select');
     selects.each(function (item) {
@@ -52,20 +55,13 @@ $('#dialogModal')
     .on('show.bs.modal', function (event) {
     const item = $(event.relatedTarget);
     const name = item.text();
-    const modal = $(this);
-    modal.find('.modal-title').text(name);
+    $(this).find('.modal-title').text(name);
 })
     .on('keydown', sendOnCtrl);
 
-$('#srch-term')
-    .on('change', filterUsers)
-    .on('keyup', filterUsers);
-
 $('.btn-ft-modal').on('click', () => checkIfEmpty($('#dialogMessage')));
-$('#inlineRadio1').on('change', filterUsers);
-$('#inlineRadio2').on('change', filterUsers);
-$('#inlineRadio3').on('change', filterUsers);
-$('#inlineCheckbox4').on('change', filterUsers);
+$('.user-container-search input').each((i, item) => $(item).on('change', filterUsers));
+$('#srch-term').on('keyup', filterUsers);
 
 function filterUsers() {
     const idSearch = $('#inlineRadio1').is(':checked');
@@ -98,16 +94,23 @@ function randomID () {
 }
 
 function randomPartID(multiply) {
-    return Math.floor(Math.random() * (Math.pow(10, multiply) - 9*multiply + 1) + 9*multiply);
+    let min = 0;
+    for (let i = 0; i < multiply - 1; i++) {
+        min += 9*Math.pow(10, i);
+    }
+    const max = Math.pow(10, multiply);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function sendMessage() {
     const lastMessage = $('.modal-message:last');
     const dialogMessage = $('#dialogMessage');
     const tomorrow = new Date(new Date().getTime() + 20 * 60 * 60 * 1000);
-    lastMessage.after('<div class="modal-message modal-question">' +
-        '<img class="img-circle message-img" src="img/identicon6.png" alt=""><p>'
-        + formattedMessage(dialogMessage.val()) + '</p><span class="message-date">'+ tomorrow.getFormattedTime() + '</span></div>');
+    lastMessage.after('<div class="modal-message modal-question">'
+        + '<img class="img-circle message-img" src="img/identicon6.png" alt="">'
+        + '<p>' + formattedMessage(dialogMessage.val()) + '</p>'
+        + '<span class="message-date">' + tomorrow.getFormattedTime() + '</span>'
+        + '</div>');
     dialogMessage.val('');
 }
 
