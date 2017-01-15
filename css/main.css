@@ -275,9 +275,9 @@ nav {
 
 .menu-span {
     display: inline-block;
-    padding: 3px 7px;
-    margin-left: 10px;
-    background-color: #2aabd2;
+    padding: 3px 8px;
+    margin-left: 25px;
+    background-color: rgba(66, 139, 202, 0.9);
     color: white;
     border-radius: 50%;
     line-height: 1.3;

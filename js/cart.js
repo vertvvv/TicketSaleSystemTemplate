@@ -57,7 +57,6 @@ $('body')
         let thisdate = new Date($("#visitDate").val());
         $("#completeDate").text(thisdate.toLocaleDateString());
         $("#completeCost").text($("#totalAmount").text());
-        saySomething();
     })
 
     .on('click', '.change-quant', function () {
@@ -93,15 +92,4 @@ function loadInfo() {
         $(this).find('.attr-img').attr('src', 'img/attr' + this.id.substr(6) + '.png');
     });
     totalAmount();
-}
-
-function saySomething(text = $('.modal-body p').text(), lang = 'en-US') {
-    speechSynthesis.cancel();
-    const msg = new SpeechSynthesisUtterance();
-    msg.text = text;
-    msg.lang = lang;
-    msg.volume = 0.4;
-    msg.pitch = 0.4;
-    msg.rate = 1.1;
-    speechSynthesis.speak(msg);
 }
